@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing - Echoes in the Void | MusicStream</title>
+</head>
+<body>
+    <!-- Header / Navegación superior -->
+    <header class="header">
+        <div class="header__container">
+            <!-- Logo -->
+            <div class="header__logo">
+                <span class="header__logo-icon"></span>
+                <span class="header__logo-text">MusicStream</span>
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="header__search">
+                <button class="search__button">
+                    <span class="search__icon">🔍</span>
+                </button>
+                <input type="search" class="search__input" placeholder="Search">
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Browse</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Library</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Store</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Iconos de usuario -->
+            <div class="header__actions">
+                <button class="action__button action__button--notifications">
+                    <span class="action__icon">🔔</span>
+                </button>
+                <div class="user__profile">
+                    <img src="avatar.jpg" alt="User profile" class="user__avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="player-page">
+        <!-- Columna izquierda - Reproducción actual -->
+        <section class="now-playing">
+            <div class="now-playing__container">
+                <!-- Portada del álbum -->
+                <div class="album-display">
+                    <div class="album-display__frame">
+                        <img src="echoes-in-the-void.jpg" alt="Echoes in the Void album cover" class="album-display__image">
+                    </div>
+                    <div class="album-display__label">
+                        <span class="album-display__text">ECHOES IN THE VOID</span>
+                    </div>
+                </div>
+
+                <!-- Información de la canción -->
+                <div class="track-info">
+                    <div class="track-info__header">
+                        <h1 class="track-info__title">Echoes in the Void</h1>
+                        <button class="track-info__favorite">
+                            <span class="favorite__icon">♡</span>
+                        </button>
+                    </div>
+                    <p class="track-info__artist">Starlight Symphony</p>
+                    <p class="track-info__album">Cosmic Waves</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Columna derecha - Cola de reproducción -->
+        <aside class="up-next">
+            <div class="up-next__container">
+                <h2 class="up-next__title">Up Next</h2>
+                
+                <ul class="queue__list">
+                    <!-- Canción 1 -->
+                    <li class="queue__item">
+                        <div class="queue__item-container">
+                            <img src="neon-dreams.jpg" alt="Neon Dreams" class="queue__thumbnail">
+                            <div class="queue__info">
+                                <h3 class="queue__title">Neon Dreams</h3>
+                                <p class="queue__artist">Synthwave Rider</p>
+                            </div>
+                        </div>
+                        <span class="queue__duration">3:45</span>
+                    </li>
+
+                    <!-- Canción 2 -->
+                    <li class="queue__item">
+                        <div class="queue__item-container">
+                            <img src="lost-in-translation.jpg" alt="Lost in Translation" class="queue__thumbnail">
+                            <div class="queue__info">
+                                <h3 class="queue__title">Lost in Translation</h3>
+                                <p class="queue__artist">The Vowels</p>
+                            </div>
+                        </div>
+                        <span class="queue__duration">4:12</span>
+                    </li>
+
+                    <!-- Canción 3 -->
+                    <li class="queue__item">
+                        <div class="queue__item-container">
+                            <img src="city-lights.jpg" alt="City Lights" class="queue__thumbnail">
+                            <div class="queue__info">
+                                <h3 class="queue__title">City Lights</h3>
+                                <p class="queue__artist">Urban Explorer</p>
+                            </div>
+                        </div>
+                        <span class="queue__duration">2:58</span>
+                    </li>
+
+                    <!-- Canción 4 -->
+                    <li class="queue__item">
+                        <div class="queue__item-container">
+                            <img src="ocean-drive.jpg" alt="Ocean Drive" class="queue__thumbnail">
+                            <div class="queue__info">
+                                <h3 class="queue__title">Ocean Drive</h3>
+                                <p class="queue__artist">Summer Haze</p>
+                            </div>
+                        </div>
+                        <span class="queue__duration">3:30</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Reproductor inferior -->
+    <footer class="player-bar">
+        <div class="player-bar__container">
+            <!-- Información de la canción actual -->
+            <div class="player-bar__info">
+                <img src="echoes-in-the-void-thumb.jpg" alt="Echoes in the Void" class="player-bar__thumbnail">
+                <div class="player-bar__track-info">
+                    <h4 class="player-bar__title">Echoes in the Void</h4>
+                    <p class="player-bar__artist">Starlight Symphony</p>
+                </div>
+                <button class="player-bar__favorite">
+                    <span class="player-bar__favorite-icon">♡</span>
+                </button>
+            </div>
+
+            <!-- Controles de reproducción -->
+            <div class="player-bar__controls">
+                <div class="player-bar__buttons">
+                    <button class="control__button control__button--shuffle">
+                        <span class="control__icon">⧖</span>
+                    </button>
+                    <button class="control__button control__button--previous">
+                        <span class="control__icon">⏮</span>
+                    </button>
+                    <button class="control__button control__button--play">
+                        <span class="control__icon">⏸</span>
+                    </button>
+                    <button class="control__button control__button--next">
+                        <span class="control__icon">⏭</span>
+                    </button>
+                    <button class="control__button control__button--repeat">
+                        <span class="control__icon">⇄</span>
+                    </button>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div class="player-bar__progress">
+                    <span class="progress__time progress__time--current">1:21</span>
+                    <div class="progress__container">
+                        <div class="progress__bar">
+                            <div class="progress__fill"></div>
+                        </div>
+                    </div>
+                    <span class="progress__time progress__time--total">3:56</span>
+                </div>
+            </div>
+
+            <!-- Controles de volumen y pantalla completa -->
+            <div class="player-bar__extras">
+                <div class="volume__control">
+                    <button class="volume__button">
+                        <span class="volume__icon">🔊</span>
+                    </button>
+                    <div class="volume__slider">
+                        <div class="volume__bar">
+                            <div class="volume__fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="fullscreen__button">
+                    <span class="fullscreen__icon">⛶</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
