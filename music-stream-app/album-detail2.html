@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metallica</title>
+</head>
+<body>
+    <!-- Header / Navegación principal -->
+    <header class="header">
+        <div class="header__container">
+            <!-- Logo -->
+            <div class="header__logo">
+                <span class="header__logo-icon"></span>
+                <span class="header__logo-text">MusicStream</span>
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="header__search">
+                <button class="search__button">
+                    <span class="search__icon">🔍</span>
+                </button>
+                <input type="search" class="search__input" placeholder="Search artists, albums...">
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link nav__link--active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Browse</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Library</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Iconos de usuario -->
+            <div class="header__actions">
+                <button class="action__button">
+                    <span class="action__icon">🛒</span>
+                </button>
+                <button class="action__button">
+                    <span class="action__icon">🔔</span>
+                </button>
+                <div class="user__profile">
+                    <img src="jugador.png" alt="User profile" class="user__avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main">
+        <!-- Breadcrumb / Migas de pan -->
+        <nav class="breadcrumb">
+            <ul class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="#" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__separator">/</li>
+                <li class="breadcrumb__item">
+                    <a href="#" class="breadcrumb__link">Artist</a>
+                </li>
+                <li class="breadcrumb__separator">/</li>
+                <li class="breadcrumb__item">
+                    <span class="breadcrumb__link breadcrumb__link--current">Metallica</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenedor del álbum -->
+        <div class="album-container">
+            <!-- Columna izquierda - Información del álbum -->
+            <div class="album-info">
+                <!-- Portada del álbum -->
+                <div class="album-cover">
+                    <img src="diomedesdiaz.jpeg" alt="Vallenato album cover" class="album-cover__image">
+                </div>
+
+                <!-- Título y detalles -->
+                <div class="album-details">
+                    <h1 class="album-details__title">...And Justice For All</h1>
+                    <p class="album-details__meta">
+                        <span class="album-details__artist">Metallica</span>
+                        <span class="album-details__separator">•</span>
+                        <span class="album-details__year">1988</span>
+                        <span class="album-details__separator">•</span>
+                        <span class="album-details__genre">Thrash metal</span>
+                    </p>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="album-actions">
+                    <button class="btn btn--primary btn--large">
+                        Add Album to Cart - $9.99
+                    </button>
+                    
+                    <div class="album-actions__secondary">
+                        <button class="btn btn--secondary">
+                            <span class="btn__icon">♡</span>
+                            <span class="btn__text">Wishlist</span>
+                        </button>
+                        
+                        <button class="btn btn--secondary">
+                            <span class="btn__icon">↗</span>
+                            <span class="btn__text">Share</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha - Tracklist y contenido -->
+            <div class="album-content">
+                <!-- Lista de canciones -->
+                <section class="tracklist">
+                    <h2 class="tracklist__title">Tracklist</h2>
+                    
+                    <table class="tracklist__table">
+                        <thead class="tracklist__header">
+                            <tr class="tracklist__row tracklist__row--header">
+                                <th class="tracklist__cell tracklist__cell--number">#</th>
+                                <th class="tracklist__cell tracklist__cell--title">TITLE</th>
+                                <th class="tracklist__cell tracklist__cell--artist">ARTIST</th>
+                                <th class="tracklist__cell tracklist__cell--duration">
+                                    <span class="duration__icon">⏱</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody class="tracklist__body">
+                            <!-- Track 1 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">1</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">Blackened</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Metallica</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">6:42</span>
+                                </td>
+                            </tr>
+
+                            <!-- Track 2 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">2</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">...And Justice For All</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Metallica</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">9:45</span>
+                                </td>
+                            </tr>
+
+                            <!-- Track 3 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">3</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">Harvester of Sorrow</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Metallica</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">5:45</span>
+                                </td>
+                            </tr>
+
+                            <!-- Track 4 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">4</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">One</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Metallica</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">7:26</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Tabs de información -->
+                <section class="album-tabs">
+                    <div class="tabs__navigation">
+                        <button class="tabs__tab tabs__tab--active">About the Artist</button>
+                        <button class="tabs__tab">Reviews</button>
+                        <button class="tabs__tab">Credits</button>
+                    </div>
+
+                    <div class="tabs__content">
+                        <div class="tab-panel tab-panel--active">
+                            <p class="artist__description">
+                                Considerada una de las figuras definitivas del "Big Four" del thrash metal, Metallica ha moldeado el sonido del rock pesado durante más de cuatro décadas. Con una trayectoria que abarca desde la velocidad técnica de los 80 hasta el éxito masivo global, la banda liderada por James Hetfield y Lars Ulrich combina riffs icónicos, una energía imparable en directo y un legado que los posiciona como leyendas vivientes del género.
+                            </p>
+                            <a href="#" class="artist__link">
+                                Read more on their page →
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Reproductor de música -->
+    <footer class="player">
+        <div class="player__container">
+            <!-- Información de la canción actual -->
+            <div class="player__info">
+                <img src="cachon.jpg" alt="Starlight Serenade" class="player__thumbnail">
+                <div class="player__track-info">
+                    <h4 class="player__track-title">One</h4>
+                    <p class="player__track-artist">Metallica</p>
+                </div>
+            </div>
+
+            <!-- Controles del reproductor -->
+            <div class="player__controls">
+                <div class="player__buttons">
+                    <button class="control__button">
+                        <span class="control__icon">⧖</span>
+                    </button>
+                    <button class="control__button">
+                        <span class="control__icon">⏮</span>
+                    </button>
+                    <button class="control__button control__button--play">
+                        <span class="control__icon">⏸</span>
+                    </button>
+                    <button class="control__button">
+                        <span class="control__icon">⏭</span>
+                    </button>
+                    <button class="control__button">
+                        <span class="control__icon">⇄</span>
+                    </button>
+                </div>
+                
+                <div class="player__progress">
+                    <span class="progress__time progress__time--current">1:23</span>
+                    <div class="progress__bar">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <span class="progress__time progress__time--total">7:26</span>
+                </div>
+            </div>
+
+            <!-- Control de volumen -->
+            <div class="player__volume">
+                <button class="volume__button">
+                    <span class="volume__icon">🔊</span>
+                </button>
+                <div class="volume__slider">
+                    <div class="volume__fill"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
