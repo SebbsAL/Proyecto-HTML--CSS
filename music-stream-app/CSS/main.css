@@ -105,3 +105,15 @@ button {
     color: var(--text-primary);
     border-bottom-color: var(--accent-blue);
 }
+
+/* Buscador del header*/
+.header__search {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-input);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    margin-right: 1.5rem;
+}
+
