@@ -46,7 +46,7 @@ button {
 .header {
     background-color: var(--bg-body);
     border-bottom: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -54,20 +54,15 @@ button {
 /*Estamos ubicando el logo, notificaciones */
 .header__container {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 15px;
 }
 /*Vamos a darle estilo al logo*/
 .header__logo {
-    display: flex;
-    justify-content: left;
-    gap: 8px;
-    flex: 0 0 auto; /* No se estira */
+    order: 1;
+    flex: 0 1 auto;
 }
 .header__logo-icon{
     height: 24px; /* Un poco más pequeño para que no rompa el diseño */
@@ -83,17 +78,16 @@ button {
     align-self: flex-end;
 }
 .header__actions{ /* Acciones (Iconos y Avatar) a la derecha */
+    order: 3;
+    flex: 1 0 100%;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 0 0 auto;
+    justify-content: flex-start;
 }
 /*Navegacion*/
 .header__nav {
-    display: flex;
-    flex: content;
-    justify-content: center;
-    padding: 25px;
+    order: 2;
+    flex: 0 1 auto;
+    padding: 0;
 }
 .search__logo{
     width: 50px;
@@ -117,8 +111,7 @@ button {
 .nav__list {
     display: flex;
     gap: 10px; /* Menor espacio entre enlaces en móvil */
-    font-size: 0.8rem; /* Pequeño para que quepa en móvil */
-    text-decoration: none;
+    font-size: 0.9rem; /* Pequeño para que quepa en móvil */
 }
 .breadcrumb__list{
     display: flex;
