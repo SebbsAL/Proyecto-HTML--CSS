@@ -116,4 +116,106 @@ button {
     border: 1px solid var(--border-color);
     margin-right: 1.5rem;
 }
+main.main {
+    padding-bottom: 120px; /* Suficiente espacio para que el reproductor no tape nada */
+}
 
+.album-container{
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Columna fija para la foto, el resto para la lista */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+/* Columna izquierda (Info) */
+.album-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+/* Imagen del álbum con bordes redondeados */
+.album-cover__image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.tracklist__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.tracklist__row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+.tracklist__row:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.tracklist__cell {
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-secondary);
+}
+.tracklist__cell--title {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+/* 1. Contenedor principal del reproductor */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px; /* Alto definido para que no crezca */
+    background-color: #0f172a; /* Mismo fondo que el body o un poco más oscuro */
+    border-top: 1px solid var(--border-color);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Siempre encima de todo */
+}
+/*Limitar el tamaño de la foto de la cancion */
+.player__thumbnail {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 8px;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    flex-shrink: 0; /* Evita que se aplaste */
+}
+/* 3. Estructura interna */
+.player__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+/* 4. Alinear info de canción */
+.player__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 30%; /* Espacio reservado a la izquierda */
+}
+.player__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 40%;
+}
+.player__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.control__icon {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+.control__button--play .control__icon {
+    font-size: 2rem; /* El botón de pausa/play es más grande */
+    color: var(--accent-blue);
+}
