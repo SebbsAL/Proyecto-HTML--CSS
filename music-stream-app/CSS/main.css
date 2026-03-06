@@ -61,10 +61,10 @@ button {
     max-width: 1400px;
     margin: 0 auto;
 }
-/*Vamos a darle stilo al logo*/
+/*Vamos a darle estilo al logo*/
 .header__logo {
     display: flex;
-    align-items: center;
+    justify-content: left;
     gap: 8px;
     flex: 0 0 auto; /* No se estira */
 }
@@ -79,6 +79,7 @@ button {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    align-self: flex-end;
 }
 .header__actions{ /* Acciones (Iconos y Avatar) a la derecha */
     display: flex;
@@ -89,14 +90,20 @@ button {
 /*Navegacion*/
 .header__nav {
     display: flex;
-    flex: 1; /* Ocupa el espacio central */
+    flex: content;
     justify-content: center;
+    padding: 25px;
+}
+.search__logo{
+    width: 50px;
 }
 .search__input{
+    display: block;
+    align-items: center;
     background: transparent;
     border: none;
+    width: 20px;
     color: white;
-    width: 100%;
     outline: none;
     font-size: 0.9rem;
 }
@@ -135,6 +142,7 @@ button {
 .header__search {
     display: flex;
     align-items: center;
+    justify-items: flex-end;
     background-color: var(--bg-input);
     border-radius: 8px;
     padding: 6px 12px;
@@ -246,32 +254,14 @@ main.main {
     font-size: 2rem; /* El botón de pausa/play es más grande */
     color: var(--accent-blue);
 }
-@media (min-width: 768px) {
-    .header__container {
-        flex-wrap: nowrap; /* Todo en una línea */
-    }
-
-    .header__search {
-        order: 2; /* Regresa al centro */
-        flex: 0 1 300px; /* Tamaño fijo de 300px */
-        margin-top: 0;
-    }
-
-    .header__nav {
-        order: 3;
-    }
-
-    .header__actions {
-        order: 4;
-    }
-}
 .search__input {
-    background: transparent;
     border: none;
     color: var(--text-primary);
     outline: none;
-    width: 250px;
+    width: 250%;
     font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 25%;
 }
 
 .search__input::placeholder {
@@ -281,7 +271,6 @@ main.main {
     background: transparent;
     border: none;
     font-size: 1rem;
-    cursor: pointer;
     opacity: 0.7;
 }
 /*Avatar o imagen del usuario*/
@@ -465,7 +454,7 @@ main.main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    group; /*Se utiliza para los efectos de hover*/
+    /*Se utiliza para los efectos de hover*/
 }
 
 .album-card:hover, .track-card:hover {
@@ -473,7 +462,7 @@ main.main {
 }
 
 /* =========================================
-   6. TARJETAS (CARDS)
+6. TARJETAS (CARDS)
    ========================================= */
 .album-card, .track-card {
     background-color: var(--bg-card);
@@ -482,7 +471,7 @@ main.main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    group; /* Para efectos hover */
+    /* Para efectos hover */
 }
 
 .album-card:hover, .track-card:hover {
@@ -552,7 +541,7 @@ main.main {
 }
 
 /* =========================================
-   7. RESPONSIVE DESIGN
+7. RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 1024px) {
     .sidebar {
@@ -575,56 +564,5 @@ main.main {
     
     .hero-banner__title {
         font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .header__nav, .header__search {
-        display: none; /* Simplificar header en móvil */
-    }
-    
-    .main-wrapper {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-        display: flex;
-        overflow-x: auto;
-        padding: 1rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-    
-    .sidebar__menu {
-        flex-direction: row;
-        gap: 1rem;
-    }
-    
-    .sidebar__title {
-        display: none;
-    }
-    
-    .sidebar__link {
-        white-space: nowrap;
-    }
-    
-    /* Restaurar texto en móvil si se desea menú horizontal */
-    .sidebar__title, .link__text {
-        display: block; 
-    }
-    
-    .hero-banner {
-        height: 250px;
-    }
-    
-    .hero-banner__content {
-        padding: 1.5rem;
-        background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 100%);
-        justify-content: flex-end;
-    }
-    
-    .albums-grid, .tracks-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-        gap: 1rem;
     }
 }
