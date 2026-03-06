@@ -58,8 +58,12 @@ button {
     max-width: 20rem;
     margin: 0 auto;
 }
-/*Vamos a darle stilo al logo*/
+/*Vamos a darle estilo al logo*/
 .header__logo {
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    flex: 0 0 auto; /* No se estira */
     display:flexbox;
     align-items: center;
     gap: 0.7px;
@@ -74,11 +78,28 @@ button {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    align-self: flex-end;
 }
 
 /*Navegacion*/
 .header__nav {
     display: flex;
+    flex: content;
+    justify-content: center;
+    padding: 25px;
+}
+.search__logo{
+    width: 50px;
+}
+.search__input{
+    display: block;
+    align-items: center;
+    background: transparent;
+    border: none;
+    width: 20px;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
     justify-content: center ;
     flex: 1;
 }
@@ -109,6 +130,8 @@ button {
 /* Buscador del header*/
 .header__search {
     display: flex;
+    align-items: center;
+    justify-items: flex-end;
     align-items:center;
     justify-items:flex-end;
     background-color: var(--bg-input);
@@ -117,14 +140,100 @@ button {
     border: 1px solid var(--border-color);
     margin-right: 1.5rem;
 }
+/* Imagen del álbum con bordes redondeados */
+.album-cover__image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.tracklist__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+.tracklist__row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+.tracklist__row:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.tracklist__cell {
+    padding: 1rem;
+    text-align: left;
+    color: var(--text-secondary);
+}
+.tracklist__cell--title {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+/* 1. Contenedor principal del reproductor */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px; /* Alto definido para que no crezca */
+    background-color: #0f172a; /* Mismo fondo que el body o un poco más oscuro */
+    border-top: 1px solid var(--border-color);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Siempre encima de todo */
+}
+/*Limitar el tamaño de la foto de la cancion */
+.player__thumbnail {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 8px;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    flex-shrink: 0; /* Evita que se aplaste */
+}
+/* 3. Estructura interna */
+.player__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+/* 4. Alinear info de canción */
+.player__info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 30%; /* Espacio reservado a la izquierda */
+}
+.player__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 40%;
+}
+.player__buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.control__icon {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+.control__button--play .control__icon {
+    font-size: 2rem; /* El botón de pausa/play es más grande */
+    color: var(--accent-blue);
+}
 
 .search__input {
-    background: transparent;
     border: none;
     color: var(--text-primary);
     outline: none;
-    width: 250px;
+    width: 250%;
     font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 25%;
 }
 
 .search__input::placeholder {
@@ -134,7 +243,6 @@ button {
     background: transparent;
     border: none;
     font-size: 1rem;
-    cursor: pointer;
     opacity: 0.7;
 }
 /*Avatar o imagen del usuario*/
@@ -318,7 +426,7 @@ button {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    group; /*Se utiliza para los efectos de hover*/
+    /*Se utiliza para los efectos de hover*/
 }
 
 .album-card:hover, .track-card:hover {
@@ -326,7 +434,7 @@ button {
 }
 
 /* =========================================
-   6. TARJETAS (CARDS)
+6. TARJETAS (CARDS)
    ========================================= */
 .album-card, .track-card {
     background-color: var(--bg-card);
@@ -335,7 +443,7 @@ button {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    group; /* Para efectos hover */
+    /* Para efectos hover */
 }
 
 .album-card:hover, .track-card:hover {
@@ -405,7 +513,7 @@ button {
 }
 
 /* =========================================
-   7. RESPONSIVE DESIGN
+7. RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 1024px) {
     .sidebar {
