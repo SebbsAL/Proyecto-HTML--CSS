@@ -133,6 +133,7 @@ button {
 .header__search {
     display: flex;
     align-items: center;
+    justify-items: flex-end;
     background-color: var(--bg-input);
     border-radius: 8px;
     padding: 6px 12px;
