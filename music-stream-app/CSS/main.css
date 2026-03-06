@@ -1,16 +1,25 @@
+/* =========================================
+   1. VARIABLES Y RESET GLOBAL
+   ========================================= */
 :root {
-    /* Paleta de Colores basada en la imagen */
---bg-body: #0f172a;        /* Fondo principal muy oscuro */
---bg-sidebar: #0f172a;     /* Fondo sidebar */
---bg-card: #1e293b;        /* Fondo de las tarjetas */
---bg-input: #1e293b;       /* Fondo del buscador */
---text-primary: #ffffff;   /* Texto blanco */
---text-secondary: #94a3b8; /* Texto gris (artistas, labels) */
---accent-blue: #2563eb;    /* Azul brillante (botones, active) */
---accent-blue-dark: #1e3a8a; /* Azul oscuro (fondos de botones) */
---accent-blue-hover: #3b82f6;
---border-color: #334155;   /* Bordes sutiles */    
---font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Colores */
+    --bg-body: #0f172a;
+    --bg-header: #161920;
+    --bg-card: #1e293b;
+    --bg-card-hover: #252932;
+    --primary-blue: #2962ff;
+    --primary-blue-light: rgba(41, 98, 255, 0.15);
+    --text-main: #ffffff;
+    --text-secondary: #94a3b8;
+    --border-color: #2a2e38;
+    
+    /* Dimensiones */
+    --header-height: 80px;
+    --sidebar-width: 240px;
+    --sidebar-width-collapsed: 80px;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 8px;
 }
 
 * {
@@ -20,585 +29,954 @@
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-body);
-    color: var(--text-primary);
-    line-height: 1.5;
-    overflow-x: hidden; /* Evitar scroll horizontal */
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
 }
-/*Quitamos las viñetas que aparece en la pagina*/
-ul {
-    list-style: none;
-}
-/*Medidaas para las imagenes*/
-img {
-    max-width: 100%;
-    display: block;
-    background: transparent;
-}
-/*Estamos dandole el estilo a los botones*/
-button {
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
-}
-/*1. Estamos dando el stilo y la parte del logo y notificaciones*/
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+/* =========================================
+   2. HEADER - ORDEN MODIFICADO
+   Logo -> Nav -> Search -> User
+   ========================================= */
 .header {
-    background-color: var(--bg-body);
-    border-bottom: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
     position: sticky;
     top: 0;
-    z-index: 100;
-}
-/*Estamos ubicando el logo, notificaciones */
-.header__container {
+    z-index: 1000;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-color);
+    min-height: var(--header-height);
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben */
     align-items: center;
-    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
     width: 100%;
-    gap: 10px;
-    max-width: 1400px;
-    margin: 0 auto;
 }
-/*Vamos a darle estilo al logo*/
+
+.header__container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Logo - Primero a la izquierda */
 .header__logo {
     display: flex;
-    justify-content: left;
-    gap: 8px;
-    flex: 0 0 auto; /* No se estira */
-}
-.header__logo-icon{
-    height: 24px; /* Un poco más pequeño para que no rompa el diseño */
-}
-.logo{
-    height: 32px;
-    width: auto;
-}
-.header__logo-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    align-self: flex-end;
-}
-.header__actions{ /* Acciones (Iconos y Avatar) a la derecha */
-    display: flex;
     align-items: center;
-    gap: 12px;
-    flex: 0 0 auto;
+    gap: 10px;
+    flex-shrink: 0;
+    order: 1;
 }
-/*Navegacion*/
+
+.logo { 
+    height: 32px; 
+    width: auto;
+    min-width: 32px;
+}
+
+.header__logo-text { 
+    font-size: 1.25rem; 
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Navegación - Segundo, INMEDIATAMENTE derecha del logo */
 .header__nav {
+    order: 2;
     display: flex;
-    flex: content;
-    justify-content: center;
-    padding: 25px;
+    margin-left: 0;
 }
-.search__logo{
-    width: 50px;
-}
-.search__input{
-    flex-grow: 1;          /* ESTO es lo que hace que ocupe todo el espacio */
-    background: transparent;
-    border: none;
-    color: white;
-    outline: none;
-    font-size: 0.9rem;
-    padding: 0 10px;       /* Separación entre iconos y texto */
-}
-.user__avatar{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
+
 .nav__list {
     display: flex;
-    gap: 10px; /* Menor espacio entre enlaces en móvil */
-    font-size: 0.8rem; /* Pequeño para que quepa en móvil */
-    text-decoration: none;
+    gap: 2.5rem;
+    position: relative;
 }
-.breadcrumb__list{
-    display: flex;
-    gap: 5px;
-    list-style: none;
-    padding: 15px;
-    margin-top:-5px;
+
+.nav__item { 
+    position: relative; 
 }
-.breadcrumb__list a{
-    text-decoration: none;
-    color: var(--text-secondary);
-}
+
 .nav__link {
-    color: var(--text-secondary);
+    font-size: 0.95rem;
     font-weight: 500;
-    font-size: 1rem;;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.nav__link:hover {
-    color: var(--text-primary);
-}
-
-.nav__link--active {
-    color: var(--text-primary);
-    border-bottom-color: var(--accent-blue);
-}
-
-/* Buscador del header*/
-.header__search {
-    display: flex;
-    align-items: center;
-    justify-items: flex-end;
-    background-color: var(--bg-input);
-    border-radius: 8px;
-    padding: 6px 12px;
-    border: 1px solid var(--border-color);
-    order: 4; /* Se mueve al final */
-    flex: 1 1 100%; /* Ocupa toda la línea en móvil */
-    margin-top: 5px;
-}
-main.main {
-    padding-bottom: 120px; /* Suficiente espacio para que el reproductor no tape nada */
-}
-.search__icon{
-    width: 20px;
-}
-.album-container{
-    display: grid;
-    grid-template-columns: 320px 1fr; /* Columna fija para la foto, el resto para la lista */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-.album-details__meta{
     color: var(--text-secondary);
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    display: block;
+    position: relative;
 }
-.control__button{
-    width: 1rem;
-    height: 1rem;
-}
-.volume__icon{
-    width: 20px;
-}
-/* Columna izquierda (Info) */
-.album-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-/* Imagen del álbum con bordes redondeados */
-.album-cover__image {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.tracklist__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-.tracklist__row {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: background 0.2s;
-}
-.tracklist__row:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-.tracklist__cell {
-    padding: 1rem;
-    text-align: left;
-    color: var(--text-secondary);
-}
-.tracklist__cell--title {
-    color: var(--text-primary);
-    font-weight: 500;
-}
-/* 1. Contenedor principal del reproductor */
-.player {
-    position: fixed;
-    bottom: 0;
+
+/* Línea azul - SOLO en hover, inicialmente sin línea */
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
     left: 0;
+    width: 0; /* Inicialmente 0 */
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 3px 3px 0 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__link:hover { 
+    color: var(--text-main); 
+}
+
+/* Solo aparece en hover */
+.nav__link:hover::after {
     width: 100%;
-    height: 90px; /* Alto definido para que no crezca */
-    background-color: #0f172a; /* Mismo fondo que el body o un poco más oscuro */
-    border-top: 1px solid var(--border-color);
-    padding: 0 2rem;
+}
+
+/* Barra de búsqueda - Tercero, izquierda del user (empujado a la derecha) */
+.header__search {
+    order: 3;
+    flex-grow: 0;
+    max-width: 350px;
+    background-color: #232730;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
-    z-index: 1000; /* Siempre encima de todo */
+    transition: border 0.3s;
+    margin-left: auto;
 }
-/*Limitar el tamaño de la foto de la cancion */
-.player__thumbnail {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 8px;
-    object-fit: cover; /* Evita que la imagen se deforme */
-    flex-shrink: 0; /* Evita que se aplaste */
+
+.header__search:focus-within { 
+    border: 1px solid var(--primary-blue); 
 }
-/* 3. Estructura interna */
-.player__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+
+.search__button { 
+    background: none; 
+    border: none; 
+    margin-right: 10px;
+    padding: 0;
 }
-/* 4. Alinear info de canción */
-.player__info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 30%; /* Espacio reservado a la izquierda */
+
+.search__icon { 
+    width: 20px; 
+    height: 20px; 
+    filter: invert(1); 
+    opacity: 0.7; 
 }
-.player__controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    width: 40%;
-}
-.player__buttons {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.duration__icon{
-    width: 20px;
-    color: var(--text-primary);
-}
-.control__icon {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    width: 10px;
-    display: flex;
-}
-.control__button--play .control__icon {
-    font-size: 2rem; /* El botón de pausa/play es más grande */
-    color: var(--accent-blue);
-}
+
 .search__input {
-    border: none;
-    color: var(--text-primary);
+    background: transparent; 
+    border: none; 
+    color: white; 
+    width: 100%; 
     outline: none;
-    width: 10rem;
     font-size: 0.9rem;
-    cursor: pointer;
-    border-radius: 25%;
 }
-.action__icon{
-    width: 20px;
+
+.search__input::placeholder { 
+    color: var(--text-secondary); 
 }
-.search__input::placeholder {
-    color: var(--text-secondary);
+
+/* Usuario - Cuarto, último a la derecha */
+.header__user {
+    order: 4;
+    flex-shrink: 0;
+    margin-left: 1rem;
 }
-.search__button {
-    background: transparent;
-    border: none;
-    font-size: 1rem;
-    opacity: 0.7;
-}
-/*Avatar o imagen del usuario*/
+
 .user__avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
     overflow: hidden;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border-color); 
+    cursor: pointer;
+    transition: border-color 0.3s ease;
 }
-.btn btn--primary btn--large{
 
+.user__avatar:hover {
+    border-color: var(--primary-blue);
 }
-.user__avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-/*2.  SIDEBAR + CONTENIDO*/
 
+.user__avatar-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* =========================================
+   3. LAYOUT PRINCIPAL
+   ========================================= */
 .main-wrapper {
     display: flex;
-    min-height: calc(100vh - 73px); /*Quitamos un poco la altura del header*/
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
+    min-height: calc(100vh - var(--header-height));
+    width: 100%;
 }
-/*Sidebar*/
+
+/* =========================================
+   4. SIDEBAR - SIN COLOR INICIAL
+   Solo cambia en hover
+   ========================================= */
 .sidebar {
-    width: 260px;
-    padding: 2rem 1.5rem;
-    background-color: var(--bg-sidebar);
-    flex-shrink: 0; /*No encoge*/
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    padding: 2rem 1rem;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: var(--header-height);
+    transition: width 0.3s ease;
 }
+
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
 
 .sidebar__title {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.75rem; 
+    font-weight: 700; 
     color: var(--text-secondary);
-    text-transform: uppercase;
+    margin-bottom: 1.5rem; 
+    text-transform: uppercase; 
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
-    padding-left: 0.5rem;
+    padding-left: 16px;
+    white-space: nowrap;
 }
 
-.sidebar__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.sidebar__menu { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.5rem; 
 }
 
 .sidebar__link {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
+    gap: 12px;
+    padding: 12px 16px;
     border-radius: 12px;
-    color: var(--text-secundary);
+    color: var(--text-main); /* BLANCO inicial */
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; /* Sin fondo inicial */
 }
 
+/* Hover effect - Solo cambia al pasar el mouse */
 .sidebar__link:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-}
-/*Estado activo del Sidebar*/
-.sidebar__link--active {
-    background-color: rgba(37, 99, 235, 0.15);
-    color: var(--accent-blue);
+    background-color: var(--primary-blue-light);
+    color: var(--primary-blue);
+    transform: translateX(5px);
 }
 
+.sidebar__link:hover .link__icon {
+    filter: invert(41%) sepia(96%) saturate(435%) hue-rotate(191deg) brightness(95%) contrast(93%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Iconos - Blancos inicialmente */
 .link__icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;/*Los iconos se vuelven blancos o del color del texto*/
-    filter: brightness(0) invert(1);
+    width: 20px; 
+    height: 20px; 
+    flex-shrink: 0;
+    filter: invert(1); /* Blanco */
     opacity: 1;
+    transition: all 0.3s ease;
 }
 
-.sidebar__link--active .link__icon {
-    filter: none;
-    opacity: 1;
-}
-/*Contenido Principal*/
-.content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
-}
-
-/*3. HERO BANNER*/
-.hero-banner {
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 3rem;
-    height: 350px; /*Altura fija para el banner*/
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-/*Imagen de fondo */
-.banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /*En este caso se usa un filtro oscuro del texto se lea bien si la imagen tiene colores claros*/
-    filter: brightness(0.8);
-}
-
-.hero-banner__content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem 4rem;
-    /*Grandiente para la legibilidad*/
-    background: linear-gradient(90deg, rgba(15,25,42,0.9) 0%, rgba(15,23,42,0.6) 50%, transparent 100%);
-}
-
-.hero-banner__label {
-    font-size: 0.875;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.9);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.75rem;
-    display: block;
-    z-index: 1;
-}
-
-.hero-banner__title {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-.hero-banner__button {
-    background-color: var(--accent-blue);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    width: fit-content;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-    z-index: 1;
-}
-
-.hero-banner__button:hover {
-    background-color: var(--accent-blue-hover);
-    transform: translateY(-2px);
-}
-/*4. Secciones y Grids*/
-.section__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
-}
-
-.albums-section, .tracks-grid {
-    margin-bottom: 3rem;
-}
-/* Grid System */
-.albums-grid, .tracks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));/* Crea columnas automáticas de mínimo 220px */
-    gap: 1.5rem;
-}
-/*5. Targetas*/
-
-.album-card, .track-card{
-    background-color: var(--bg-card);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    /*Se utiliza para los efectos de hover*/
-}
-
-.album-card:hover, .track-card:hover {
-    transform: translateY(-8px);
+.link__text {
+    transition: opacity 0.3s ease;
 }
 
 /* =========================================
-6. TARJETAS (CARDS)
+   5. CONTENIDO PRINCIPAL
    ========================================= */
-.album-card, .track-card {
-    background-color: var(--bg-card);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    /* Para efectos hover */
-}
-
-.album-card:hover, .track-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-}
-
-/* Imágenes de las tarjetas */
-.album-card__image-container, .track-card__image-container {
+.content {
+    flex-grow: 1;
+    padding: 2rem;
     width: 100%;
-    aspect-ratio: 1; /* Mantiene la imagen cuadrada */
-    overflow: hidden;
+    min-width: 0;
 }
 
-.album-card__image, .track-card__image {
+/* Hero Banner */
+.hero-banner {
     width: 100%;
+    height: 350px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-banner__content {
+    width: 100%; 
     height: 100%;
+    background-image: url('./assets/img/Banner.jpg');
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end;
+    padding: 3rem; 
+    position: relative;
+}
+
+.hero-banner__content::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(0deg, rgba(15,17,21,1) 0%, rgba(15,17,21,0.2) 60%, rgba(255,165,0,0.3) 100%);
+    z-index: 1;
+}
+
+.banner {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0; 
+    filter: brightness(0.8);
+}
+
+.hero-banner__label, 
+.hero-banner__title, 
+.hero-banner__button { 
+    position: relative; 
+    z-index: 2; 
+}
+
+.hero-banner__label { 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    color: rgba(255,255,255,0.9); 
+    margin-bottom: 0.5rem; 
+    text-transform: uppercase; 
+}
+
+.hero-banner__title { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    color: #fff; 
+    margin-bottom: 1.5rem; 
+    max-width: 600px; 
+    line-height: 1.1; 
+}
+
+.hero-banner__button {
+    background-color: var(--primary-blue); 
+    color: white;
+    padding: 12px 32px; 
+    font-size: 1rem; 
+    font-weight: 600;
+    border-radius: 50px; 
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(41, 98, 255, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.hero-banner__button:hover { 
+    background-color: #1e4bd1; 
+    transform: translateY(-2px); 
+}
+
+/* Secciones y Grids */
+.section__title { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin-bottom: 1.5rem; 
+}
+
+.albums-section, 
+.tracks-section { 
+    margin-bottom: 4rem; 
+}
+
+.albums-grid, 
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+/* Tarjetas */
+.album-card, 
+.track-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px;
+    border: 1px solid transparent;
+    min-width: 0;
+}
+
+.album-card:hover, 
+.track-card:hover {
+    background-color: var(--bg-card-hover);
+    transform: translateY(-5px);
+    border-color: rgba(41, 98, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.album-card__image-container, 
+.track-card__image-container {
+    width: 100%; 
+    aspect-ratio: 1/1;
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.album-card__image, 
+.track-card__image {
+    width: 100%; 
+    height: 100%; 
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.album-card:hover .album-card__image,
-.track-card:hover .track-card__image {
-    transform: scale(1.05); /* Zoom suave al hover */
+.album-card:hover .album-card__image, 
+.track-card:hover .track-card__image { 
+    transform: scale(1.05); 
 }
 
-/* Información de la tarjeta */
-.album-card__info, .track-card__info {
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
+.album-card__info, 
+.track-card__info { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4px; 
 }
 
-.album-card__title, .track-card__title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.album-card__title, 
+.track-card__title { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: var(--text-main); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
-.album-card__artist, .track-card__artist {
+.album-card__artist, 
+.track-card__artist { 
+    font-size: 0.85rem; 
+    color: var(--text-secondary); 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.album-card__price, 
+.track-card__price {
+    margin-top: 8px;
+    background-color: rgba(41, 98, 255, 0.1);
+    color: var(--primary-blue);
+    padding: 8px; 
+    border-radius: 8px; 
+    font-weight: 600; 
     font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-/* Botón de Precio */
-.album-card__price, .track-card__price {
-    margin-top: auto; /* Empuja el botón al fondo */
-    background-color: rgba(37, 99, 235, 0.15); /* Azul muy suave */
-    color: var(--accent-blue);
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    width: 100%; 
     transition: all 0.2s;
 }
 
-.album-card__price:hover, .track-card__price:hover {
-    background-color: var(--accent-blue);
-    color: white;
+.album-card__price:hover, 
+.track-card__price:hover { 
+    background-color: var(--primary-blue); 
+    color: white; 
 }
 
 /* =========================================
-7. RESPONSIVE DESIGN
+   6. MEDIA QUERIES RESPONSIVE
    ========================================= */
-@media (max-width: 1024px) {
+
+/* TABLETS (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
     .sidebar {
-        width: 80px; /* Sidebar colapsado */
-        padding: 2rem 1rem;
+        width: var(--sidebar-width-collapsed);
+        padding: 2rem 0.5rem;
     }
     
-    .sidebar__title, .link__text {
-        display: none; /* Ocultar texto */
+    .sidebar__title { 
+        display: none; 
     }
     
     .sidebar__link {
         justify-content: center;
+        padding: 12px;
+    }
+    
+    .link__text { 
+        display: none; 
+    }
+    
+    .sidebar__link { 
+        gap: 0; 
+    }
+    
+    .content { 
+        padding: 1.5rem; 
+    }
+    
+    .hero-banner { 
+        height: 280px; 
+    }
+    
+    .hero-banner__title { 
+        font-size: 2rem; 
+    }
+    
+    .albums-grid, 
+    .tracks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* CELULARES GRANDES (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .header__container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    /* Logo arriba izquierda */
+    .header__logo { 
+        order: 1; 
+    }
+    
+    .header__logo-text {
+        font-size: 1.1rem;
+    }
+    
+    /* Usuario arriba derecha */
+    .header__user { 
+        order: 2; 
+        margin-left: auto; 
+    }
+    
+    /* Navegación debajo */
+    .header__nav {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    
+    .nav__list { 
+        gap: 1.5rem; 
+    }
+    
+    .nav__link { 
+        font-size: 0.85rem; 
+    }
+    
+    /* Barra de búsqueda debajo del logo */
+    .header__search {
+        order: 3;
+        flex-grow: 1;
+        max-width: none;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    
+    .main-wrapper { 
+        flex-direction: column; 
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
         padding: 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .sidebar__menu {
+        flex-direction: row;
+        gap: 0.75rem;
+        width: max-content;
+    }
+    
+    .sidebar__title { 
+        display: none; 
+    }
+    
+    .sidebar__link {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 16px;
+        min-width: 70px;
+        justify-content: center;
+    }
+    
+    .link__icon { 
+        width: 24px; 
+        height: 24px; 
+    }
+    
+    .link__text {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    .content { 
+        padding: 1.25rem; 
+    }
+    
+    .hero-banner {
+        height: 220px;
+        border-radius: var(--radius-md);
+        margin-bottom: 2rem;
+    }
+    
+    .hero-banner__title { 
+        font-size: 1.5rem; 
+    }
+    
+    .hero-banner__button { 
+        padding: 10px 24px; 
+        font-size: 0.9rem; 
+    }
+    
+    .albums-grid, 
+    .tracks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .album-card, 
+    .track-card { 
+        padding: 12px; 
+    }
+}
+
+/* CELULARES PEQUEÑOS (320px - 480px) */
+@media (max-width: 480px) and (min-width: 320px) {
+    .header {
+        padding: 0.5rem 0.75rem;
+        min-height: auto;
+    }
+    
+    .header__container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    /* Logo arriba izquierda */
+    .header__logo { 
+        order: 1; 
+    }
+    
+    .logo {
+        height: 28px;
+        width: auto;
+    }
+    
+    .header__logo-text {
+        font-size: 1rem;
+        display: block;
+    }
+    
+    /* Usuario arriba derecha */
+    .header__user { 
+        order: 2; 
+        margin-left: auto; 
+    }
+    
+    .user__avatar {
+        width: 36px;
+        height: 36px;
+    }
+    
+    /* Navegación debajo */
+    .header__nav {
+        order: 4;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    
+    .nav__list {
+        gap: 1rem;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .nav__link {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+    
+    /* Barra de búsqueda debajo */
+    .header__search {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        padding: 0.4rem 0.75rem;
+    }
+    
+    .search__icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .search__input {
+        font-size: 0.85rem;
+    }
+    
+    .main-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 0.75rem 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .sidebar__menu {
+        flex-direction: row;
+        gap: 0.5rem;
+        width: max-content;
+        margin: 0 auto;
+    }
+    
+    .sidebar__title { 
+        display: none; 
+    }
+    
+    .sidebar__link {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 8px 12px;
+        min-width: 60px;
+        border-radius: 10px;
+    }
+    
+    .link__icon { 
+        width: 22px; 
+        height: 22px; 
+    }
+    
+    .link__text {
+        display: none;
+    }
+    
+    .content { 
+        padding: 1rem 0.75rem; 
+    }
+    
+    .hero-banner {
+        height: 200px;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-banner__content {
+        padding: 1.5rem;
+    }
+    
+    .hero-banner__label {
+        font-size: 0.7rem;
+    }
+    
+    .hero-banner__title { 
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-banner__button { 
+        padding: 8px 20px; 
+        font-size: 0.85rem; 
+    }
+    
+    .section__title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .albums-section,
+    .tracks-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .albums-grid, 
+    .tracks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .album-card, 
+    .track-card { 
+        padding: 10px;
+        border-radius: 12px;
+    }
+    
+    .album-card__image-container,
+    .track-card__image-container {
+        border-radius: 10px;
+    }
+    
+    .album-card__title,
+    .track-card__title {
+        font-size: 0.85rem;
+    }
+    
+    .album-card__artist,
+    .track-card__artist {
+        font-size: 0.75rem;
+    }
+    
+    .album-card__price,
+    .track-card__price {
+        padding: 6px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+}
+
+/* CELULARES MUY PEQUEÑOS (320px - 392px) */
+@media (max-width: 392px) and (min-width: 320px) {
+    .header__logo-text {
+        font-size: 0.95rem;
+    }
+    
+    .logo {
+        height: 26px;
+    }
+    
+    .nav__link {
+        font-size: 0.75rem;
+    }
+    
+    .sidebar__link {
+        min-width: 55px;
+        padding: 8px 10px;
     }
     
     .link__icon {
-        margin: 0;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .hero-banner {
+        height: 180px;
     }
     
     .hero-banner__title {
-        font-size: 2.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .albums-grid,
+    .tracks-grid {
+        gap: 10px;
     }
 }
+
+/* Ajustes específicos para 393px x 852px */
+@media (width: 393px) {
+    .header__logo-text {
+        font-size: 1.05rem;
+        display: block;
+    }
+    
+    .logo {
+        height: 28px;
+    }
+    
+    .header__container {
+        gap: 0.6rem;
+    }
+    
+    .nav__list {
+        gap: 1.2rem;
+    }
+    
+    .nav__link {
+        font-size: 0.82rem;
+    }
+}
+
+/* Prevenir overflow */
+@media screen and (max-width: 100vw) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .main-wrapper {
+        max-width: 100%;
+    }
+    
+    .content {
+        max-width: 100%;
+    }
+    
+    .albums-grid,
+    .tracks-grid {
+        max-width: 100%;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.album-card,
+.track-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.album-card:nth-child(1) { animation-delay: 0.1s; }
+.album-card:nth-child(2) { animation-delay: 0.2s; }
+.album-card:nth-child(3) { animation-delay: 0.3s; }
+.album-card:nth-child(4) { animation-delay: 0.4s; }
+
+.track-card:nth-child(1) { animation-delay: 0.1s; }
+.track-card:nth-child(2) { animation-delay: 0.2s; }
+.track-card:nth-child(3) { animation-delay: 0.3s; }
+.track-card:nth-child(4) { animation-delay: 0.4s; }
