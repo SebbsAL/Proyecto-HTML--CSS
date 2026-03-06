@@ -45,7 +45,7 @@ button {
 .header {
     background-color: var(--bg-body);
     border-bottom: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 2rem;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -53,64 +53,39 @@ button {
 /*Estamos ubicando el logo, notificaciones */
 .header__container {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben */
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    max-width: 1400px;
+    max-width: 20rem;
     margin: 0 auto;
 }
 /*Vamos a darle stilo al logo*/
 .header__logo {
-    display: flex;
+    display:flexbox;
     align-items: center;
-    gap: 8px;
-    flex: 0 0 auto; /* No se estira */
+    gap: 0.7px;
 }
-.header__logo-icon{
-    height: 24px; /* Un poco más pequeño para que no rompa el diseño */
-}
+
 .logo{
     height: 32px;
     width: auto;
 }
+
 .header__logo-text {
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
-.header__actions{ /* Acciones (Iconos y Avatar) a la derecha */
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 0 0 auto;
-}
+
 /*Navegacion*/
 .header__nav {
     display: flex;
-    flex: 1; /* Ocupa el espacio central */
-    justify-content: center;
+    justify-content: center ;
+    flex: 1;
 }
-.search__input{
-    background: transparent;
-    border: none;
-    color: white;
-    width: 100%;
-    outline: none;
-    font-size: 0.9rem;
-}
-.user__avatar{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
+
 .nav__list {
     display: flex;
-    gap: 10px; /* Menor espacio entre enlaces en móvil */
-    font-size: 0.8rem; /* Pequeño para que quepa en móvil */
+    gap: 2rem;
 }
 
 .nav__link {
@@ -134,137 +109,15 @@ button {
 /* Buscador del header*/
 .header__search {
     display: flex;
-    align-items: center;
+    align-items:center;
+    justify-items:flex-end;
     background-color: var(--bg-input);
-    border-radius: 8px;
-    padding: 6px 12px;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--border-color);
-    order: 4; /* Se mueve al final */
-    flex: 1 1 100%; /* Ocupa toda la línea en móvil */
-    margin-top: 5px;
-}
-main.main {
-    padding-bottom: 120px; /* Suficiente espacio para que el reproductor no tape nada */
+    margin-right: 1.5rem;
 }
 
-.album-container{
-    display: grid;
-    grid-template-columns: 320px 1fr; /* Columna fija para la foto, el resto para la lista */
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-/* Columna izquierda (Info) */
-.album-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-/* Imagen del álbum con bordes redondeados */
-.album-cover__image {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.tracklist__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-.tracklist__row {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: background 0.2s;
-}
-.tracklist__row:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-.tracklist__cell {
-    padding: 1rem;
-    text-align: left;
-    color: var(--text-secondary);
-}
-.tracklist__cell--title {
-    color: var(--text-primary);
-    font-weight: 500;
-}
-/* 1. Contenedor principal del reproductor */
-.player {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px; /* Alto definido para que no crezca */
-    background-color: #0f172a; /* Mismo fondo que el body o un poco más oscuro */
-    border-top: 1px solid var(--border-color);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    z-index: 1000; /* Siempre encima de todo */
-}
-/*Limitar el tamaño de la foto de la cancion */
-.player__thumbnail {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 8px;
-    object-fit: cover; /* Evita que la imagen se deforme */
-    flex-shrink: 0; /* Evita que se aplaste */
-}
-/* 3. Estructura interna */
-.player__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-/* 4. Alinear info de canción */
-.player__info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 30%; /* Espacio reservado a la izquierda */
-}
-.player__controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    width: 40%;
-}
-.player__buttons {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.control__icon {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-}
-.control__button--play .control__icon {
-    font-size: 2rem; /* El botón de pausa/play es más grande */
-    color: var(--accent-blue);
-}
-@media (min-width: 768px) {
-    .header__container {
-        flex-wrap: nowrap; /* Todo en una línea */
-    }
-
-    .header__search {
-        order: 2; /* Regresa al centro */
-        flex: 0 1 300px; /* Tamaño fijo de 300px */
-        margin-top: 0;
-    }
-
-    .header__nav {
-        order: 3;
-    }
-
-    .header__actions {
-        order: 4;
-    }
-}
 .search__input {
     background: transparent;
     border: none;
@@ -578,19 +431,20 @@ main.main {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 375px) {
     .header__nav, .header__search {
         display: none; /* Simplificar header en móvil */
     }
     
     .main-wrapper {
-        flex-direction: column;
+        flex-direction:column;
     }
     
     .sidebar {
         width: 100%;
-        display: flex;
+        display: contents;
         overflow-x: auto;
+        overflow-y: scroll;
         padding: 1rem;
         border-bottom: 1px solid var(--border-color);
     }
@@ -601,7 +455,8 @@ main.main {
     }
     
     .sidebar__title {
-        display: none;
+        display: none;Dark Mode: Fondo principal oscuro (#0f172a o similar), texto blanco/gris claro.
+        Acento: Uso consistente del color azul (#3b82f6 aprox) para botones y enlaces activos.
     }
     
     .sidebar__link {
