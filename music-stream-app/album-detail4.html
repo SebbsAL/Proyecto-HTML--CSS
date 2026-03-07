@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radiohead | MusicStream</title>
-    <link rel="stylesheet" href="CSS/views/album.css">
+    <link rel="stylesheet" href="/music-stream-app/CSS/views/album.css">
     <link rel="icon" href="./assets/icons/favico.ico" type="image/png">
 </head>
 <body>
@@ -13,18 +13,17 @@
         <div class="header__container">
             <!-- Logo -->
             <div class="header__logo">
-                <span class="header__logo-icon"></span>
+                <img src="/music-stream-app/assets/img/logo.png" class="header__logo-icon" alt="MusicStream logo">
                 <span class="header__logo-text">MusicStream</span>
             </div>
 
             <!-- Barra de búsqueda -->
             <div class="header__search">
                 <button class="search__button">
-                    <img class="search__icon" src="./assets/icons/busqueda-de-lupa_1.svg">
+                    <img class="search__icon" src="./assets/icons/busqueda-de-lupa_1.svg" alt="lupa de busqueda">
                 </button>
                 <input type="search" class="search__input" placeholder="Search artists, albums...">
             </div>
-
             <!-- Navegación principal -->
             <nav class="header__nav">
                 <ul class="nav__list">
@@ -39,22 +38,20 @@
                     </li>
                 </ul>
             </nav>
-
             <!-- Iconos de usuario -->
             <div class="header__actions">
                 <button class="action__button">
-                    <img class="action__icon" src="assets/icons/carrito-de-compras.svg">
+                    <img class="action__icon" src="assets/icons/carrito-de-compras.svg" alt="carrito-de-compras">
                 </button>
                 <button class="action__button">
-                    <img class="action__icon" src="assets/icons/notificacion.svg">
+                    <img class="action__icon" src="assets/icons/amor-de-corazon.svg" alt="favorito">
                 </button>
                 <div class="user__profile">
-                    <img class="duration__icon" src="assets/icons/reloj.svg">
+                    <img src="assets/img/jugador.png" alt="User profile" class="user__avatar">
                 </div>
             </div>
         </div>
     </header>
-
     <!-- Contenido principal -->
     <main class="main">
         <!-- Breadcrumb / Migas de pan -->
@@ -80,7 +77,7 @@
             <div class="album-info">
                 <!-- Portada del álbum -->
                 <div class="album-cover">
-                    <img src="diomedesdiaz.jpeg" alt="Vallenato album cover" class="album-cover__image">
+                    <img src="/music-stream-app/assets/img/radiohead.jpg" alt="Radiohead album cover" class="album-cover__image">
                 </div>
 
                 <!-- Título y detalles -->
@@ -98,7 +95,7 @@
                 <!-- Botones de acción -->
                 <div class="album-actions">
                     <button class="btn btn--primary btn--large">
-                        Add Album to Cart - $9.99
+                        Add Album to Cart - $7.99
                     </button>
                     
                     <div class="album-actions__secondary">
@@ -221,7 +218,7 @@
         <div class="player__container">
             <!-- Información de la canción actual -->
             <div class="player__info">
-                <img src="cachon.jpg" alt="Starlight Serenade" class="player__thumbnail">
+                <img src="/music-stream-app/assets/img/radcan.jpg" alt="Starlight Serenade" class="player__thumbnail">
                 <div class="player__track-info">
                     <h4 class="player__track-title">Creep</h4>
                     <p class="player__track-artist">Radiohead</p>
@@ -249,11 +246,11 @@
                 </div>
                 
                 <div class="player__progress">
-                    <span class="progress__time progress__time--current">1:23</span>
+                    <span class="progress__time progress__time--current">1:48</span>
                     <div class="progress__bar">
                         <div class="progress__fill"></div>
                     </div>
-                    <span class="progress__time progress__time--total">3:58</span>
+                    <span class="progress__time progress__time--total">5:25</span>
                 </div>
             </div>
 
