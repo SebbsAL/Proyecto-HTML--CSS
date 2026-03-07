@@ -181,12 +181,18 @@
                 </section>
                 <!-- Tabs de información -->
                 <section class="album-tabs">
+                    <!-- Inputs radio ocultos para controlar las tabs con CSS puro -->
+                    <input type="radio" name="tabs" id="tab-about" class="tabs__input" checked>
+                    <input type="radio" name="tabs" id="tab-reviews" class="tabs__input">
+                    <input type="radio" name="tabs" id="tab-credits" class="tabs__input">
+                    
                     <div class="tabs__navigation">
-                        <button class="tabs__tab tabs__tab--active">About the Artist</button>
-                        <button class="tabs__tab">Reviews</button>
-                        <button class="tabs__tab">Credits</button>
+                        <label for="tab-about" class="tabs__tab tabs__tab--active">About the Artist</label>
+                        <label for="tab-reviews" class="tabs__tab">Reviews</label>
+                        <label for="tab-credits" class="tabs__tab">Credits</label>
                     </div>
                     <div class="tabs__content">
+                        <!-- Panel 1: About the Artist -->
                         <div class="tab-panel tab-panel--active">
                             <p class="artist__description">
                                 Diomedes Díaz (1957-2013), conocido como «El Cacique de la Junta», fue el cantante y compositor más influyente y vendedor en la historia del vallenato colombiano. Con éxitos icónicos y un estilo carismático, marcó la "época de oro" del género, convirtiéndose en un ídolo popular a pesar de una vida personal llena de polémicas.
@@ -194,6 +200,104 @@
                             <a href="#" class="artist__link">
                                 Read more on their page →
                             </a>
+                        </div>
+                        
+                        <!-- Panel 2: Reviews -->
+                        <div class="tab-panel">
+                            <h3 class="reviews__title">Recepción de la Crítica</h3>
+                            <div class="reviews__list">
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">El Tiempo</span>
+                                        <span class="review__rating">★★★★★</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Diomedes Díaz es sin duda el máximo exponente del vallenato. Su voz única y su capacidad para transmitir emociones lo convierten en un artista inolvidable que trascendió generaciones."
+                                    </p>
+                                    <span class="review__date">Diciembre 1985</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Revista Semana</span>
+                                        <span class="review__rating">★★★★☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Un álbum que captura la esencia del vallenato tradicional. Las composiciones de Diomedes muestran una madurez artística excepcional y un dominio completo del acordeón y la voz."
+                                    </p>
+                                    <span class="review__date">Enero 1986</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Caracol Radio</span>
+                                        <span class="review__rating">★★★★★</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "El Cacique de la Junta demuestra por qué es el rey del vallenato. Cada canción es una historia que llega al corazón, con letras que retratan la vida cotidiana del pueblo colombiano."
+                                    </p>
+                                    <span class="review__date">Noviembre 1985</span>
+                                </div>
+                            </div>
+                            <div class="reviews__summary">
+                                <h4>Puntuación General</h4>
+                                <div class="reviews__score">
+                                    <span class="score__number">92</span>
+                                    <span class="score__label">de 100 basado en 18 reseñas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Credits -->
+                        <div class="tab-panel">
+                            <h3 class="credits__title">Créditos del Álbum</h3>
+                            <div class="credits__grid">
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Artistas Principales</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Diomedes Díaz</strong> - Voz principal, composición</li>
+                                        <li><strong>Juancho Rois</strong> - Acordeón</li>
+                                        <li><strong>Rafael Santos</strong> - Caja vallenata</li>
+                                        <li><strong>Alfonso "Poncho" Zuleta</strong> - Guacharaca</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Producción</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Productor Ejecutivo:</strong> Gabriel Ochoa Uribe</li>
+                                        <li><strong>Productor Musical:</strong> Diomedes Díaz</li>
+                                        <li><strong>Ingeniero de Sonido:</strong> Carlos Vives</li>
+                                        <li><strong>Grabado en:</strong> Estudios Sonolux, Medellín</li>
+                                        <li><strong>Masterizado por:</strong> Ingeniería de Sonido Colombia</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Información Técnica</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Año de Grabación:</strong> 1985</li>
+                                        <li><strong>Fecha de Lanzamiento:</strong> 15 de Noviembre 1985</li>
+                                        <li><strong>Sello Discográfico:</strong> CBS Records Colombia</li>
+                                        <li><strong>Duración Total:</strong> 42:15</li>
+                                        <li><strong>Formato Original:</strong> Vinilo LP</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Arte y Diseño</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Fotografía de Portada:</strong> Estudio Gráfico Colombia</li>
+                                        <li><strong>Diseño Gráfico:</strong> Alberto Martínez</li>
+                                        <li><strong>Ilustración:</strong> Manuel Rodríguez</li>
+                                        <li><strong>Coordinación de Arte:</strong> Sony Music Colombia</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="credits__notes">
+                                <h4>Notas Adicionales</h4>
+                                <p>
+                                    Este álbum marcó un punto de inflexión en la carrera de Diomedes Díaz, consolidándolo como el "Cacique de la Junta". 
+                                    La colaboración con Juancho Rois en el acordeón creó una química musical que se convirtió en legendaria. 
+                                    Varias canciones de este álbum son consideradas clásicos del vallenato y siguen siendo interpretadas por artistas 
+                                    contemporáneos en toda Colombia y Latinoamérica.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>

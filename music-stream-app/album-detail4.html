@@ -179,12 +179,18 @@
                 </section>
                 <!-- Tabs de información -->
                 <section class="album-tabs">
+                    <!-- Inputs radio ocultos para controlar las tabs con CSS puro -->
+                    <input type="radio" name="tabs" id="tab-about" class="tabs__input" checked>
+                    <input type="radio" name="tabs" id="tab-reviews" class="tabs__input">
+                    <input type="radio" name="tabs" id="tab-credits" class="tabs__input">
+                    
                     <div class="tabs__navigation">
-                        <button class="tabs__tab tabs__tab--active">About the Artist</button>
-                        <button class="tabs__tab">Reviews</button>
-                        <button class="tabs__tab">Credits</button>
+                        <label for="tab-about" class="tabs__tab tabs__tab--active">About the Artist</label>
+                        <label for="tab-reviews" class="tabs__tab">Reviews</label>
+                        <label for="tab-credits" class="tabs__tab">Credits</label>
                     </div>
                     <div class="tabs__content">
+                        <!-- Panel 1: About the Artist -->
                         <div class="tab-panel tab-panel--active">
                             <p class="artist__description">
                                 Radiohead es una de las bandas más influyentes y visionarias del rock contemporáneo, reconocida por su constante evolución y experimentación sonora. Desde sus inicios en el rock alternativo hasta su inmersión en la electrónica, el jazz y la vanguardia, el quinteto británico ha desafiado las convenciones de la industria con letras introspectivas, texturas atmosféricas y una maestría compositiva única, consolidándose como un referente indispensable para los amantes de la música que buscan profundidad y vanguardia.
@@ -192,6 +198,107 @@
                             <a href="#" class="artist__link">
                                 Read more on their page →
                             </a>
+                        </div>
+                        
+                        <!-- Panel 2: Reviews -->
+                        <div class="tab-panel">
+                            <h3 class="reviews__title">Recepción de la Crítica</h3>
+                            <div class="reviews__list">
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">NME</span>
+                                        <span class="review__rating">★★★★☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Pablo Honey presenta a una banda con un potencial enorme. 'Creep' es un himno generacional que resonará con los marginados y soñadores de todo el mundo. Radiohead está aquí para quedarse."
+                                    </p>
+                                    <span class="review__date">Febrero 1993</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Melody Maker</span>
+                                        <span class="review__rating">★★★☆☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Un debut prometedor aunque desigual. Mientras que algunas canciones brillan con intensidad emocional, otras parecen borradores de lo que Radiohead podría llegar a ser. Aún así, hay destellos de genio."
+                                    </p>
+                                    <span class="review__date">Marzo 1993</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Rolling Stone</span>
+                                        <span class="review__rating">★★★★☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Radiohead llega con una propuesta fresca que combina la crudeza del grunge con la sensibilidad del britpop. Thom Yorke emerge como una voz única que expresa la ansiedad de una generación."
+                                    </p>
+                                    <span class="review__date">Abril 1993</span>
+                                </div>
+                            </div>
+                            <div class="reviews__summary">
+                                <h4>Puntuación General</h4>
+                                <div class="reviews__score">
+                                    <span class="score__number">78</span>
+                                    <span class="score__label">de 100 basado en 28 reseñas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Credits -->
+                        <div class="tab-panel">
+                            <h3 class="credits__title">Créditos del Álbum</h3>
+                            <div class="credits__grid">
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Banda</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Thom Yorke</strong> - Voz principal, guitarra rítmica</li>
+                                        <li><strong>Jonny Greenwood</strong> - Guitarra líder, teclados, armónica</li>
+                                        <li><strong>Ed O'Brien</strong> - Guitarra, coros</li>
+                                        <li><strong>Colin Greenwood</strong> - Bajo eléctrico</li>
+                                        <li><strong>Phil Selway</strong> - Batería, percusión</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Producción</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Productores:</strong> Sean Slade, Paul Q. Kolderie</li>
+                                        <li><strong>Ingeniero de Sonido:</strong> Jim Warren</li>
+                                        <li><strong>Asistente de Ingeniería:</strong> Chris Brown</li>
+                                        <li><strong>Grabado en:</strong> Chipping Norton Recording Studios, Oxfordshire</li>
+                                        <li><strong>Masterizado por:</strong> Chris Blair en Abbey Road Studios</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Información Técnica</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Fechas de grabación:</strong> Septiembre - Noviembre 1992</li>
+                                        <li><strong>Fecha de lanzamiento:</strong> 22 de Febrero 1993</li>
+                                        <li><strong>Sello discográfico:</strong> EMI, Capitol Records</li>
+                                        <li><strong>Duración total:</strong> 42:18</li>
+                                        <li><strong>Formato original:</strong> CD, Vinilo, Cassette</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Arte y Diseño</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Fotografía de Portada:</strong> Tom Sheehan</li>
+                                        <li><strong>Diseño Gráfico:</strong> Radiohead, The Designers Republic</li>
+                                        <li><strong>Dirección de Arte:</strong> EMI Creative Team</li>
+                                        <li><strong>Ilustración Interior:</strong> Stanley Donwood</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="credits__notes">
+                                <h4>Notas Adicionales</h4>
+                                <p>
+                                    "Pablo Honey" fue el álbum debut de Radiohead, grabado cuando los miembros de la banda tenían apenas 25 años. 
+                                    El título del álbum proviene de una broma interna de la banda, tomada de un sketch de Jerky Boys donde 
+                                    alguien dice "Pablo, honey? Please come to Florida!". Aunque inicialmente fue criticado por algunos 
+                                    como un álbum de una sola canción ("Creep"), con el tiempo ha sido reconocido como un documento 
+                                    importante del rock alternativo de principios de los 90 y el punto de partida de una de las 
+                                    carreras más influyentes en la historia de la música.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
