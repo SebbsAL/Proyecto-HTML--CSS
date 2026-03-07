@@ -48,9 +48,9 @@
                         <div class="payment-method__header">
                             <span class="payment-method__label">Pay with Credit Card</span>
                             <div class="payment-method__icons">
-                                <img src="/music-stream-app/assets/icons/logo_nequi.jpg" alt="Visa" class="payment-icon">
-                                <img src="/music-stream-app/assets/icons/patrocinador.jfif" alt="Mastercard" class="payment-icon">
-                                <img src="/music-stream-app/assets/icons/daviplata.png" alt="American Express" class="payment-icon">
+                                <img src="visa-icon.svg" alt="Visa" class="payment-icon">
+                                <img src="mastercard-icon.svg" alt="Mastercard" class="payment-icon">
+                                <img src="amex-icon.svg" alt="American Express" class="payment-icon">
                             </div>
                         </div>
                         <form class="payment-form" action="#" method="POST">
@@ -63,7 +63,7 @@
                                         id="card-number" 
                                         name="cardNumber" 
                                         class="form-input" 
-                                        placeholder="0101 0101 0101 0101"
+                                        placeholder="0000 0000 0000 0000"
                                         required>
                                     <span class="input-icon">💳</span>
                                 </div>
@@ -88,7 +88,7 @@
                                             id="cvc" 
                                             name="cvc" 
                                             class="form-input" 
-                                            placeholder="666"
+                                            placeholder="123"
                                             required>
                                         <span class="input-icon">🔒</span>
                                     </div>
@@ -117,8 +117,8 @@
                             <label for="country" class="form-label">Country/Region</label>
                             <div class="select-wrapper">
                                 <select id="country" name="country" class="form-select" required>
-                                    <option value="US" selected>Colombia</option>
-                                    <option value="CA">Venezuela</option>
+                                    <option value="US" selected>United States</option>
+                                    <option value="CA">Canada</option>
                                     <option value="MX">Mexico</option>
                                     <!-- More options would go here -->
                                 </select>
@@ -133,7 +133,7 @@
                                 id="street" 
                                 name="street" 
                                 class="form-input" 
-                                placeholder="Cra 27 #55-67"
+                                placeholder="123 Music Lane"
                                 required>
                         </div>
                         <!-- City and State -->
@@ -145,7 +145,7 @@
                                     id="city" 
                                     name="city" 
                                     class="form-input" 
-                                    placeholder="Bucaramanga"
+                                    placeholder="Nashville"
                                     required>
                             </div>
                             <div class="form-group form-group--half">
@@ -155,7 +155,7 @@
                                     id="state" 
                                     name="state" 
                                     class="form-input" 
-                                    placeholder="Santander"
+                                    placeholder="Tennessee"
                                     required>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
                                 id="postal-code" 
                                 name="postalCode" 
                                 class="form-input" 
-                                placeholder="600845"
+                                placeholder="37203"
                                 required>
                         </div>
                     </form>
@@ -182,26 +182,26 @@
                     <div class="order-item">
                         <img src="assets/img/Diomedes.jpg" alt="Chromatic Echoes" class="order-item__image">
                         <div class="order-item__info">
-                            <h3 class="order-item__title">El Santo Cachon</h3>
+                            <h3 class="order-item__title">Tu Eres La Reina</h3>
                             <p class="order-item__artist">Diomedes Diaz</p>
                         </div>
-                        <span class="order-item__price">$12.99</span>
+                        <span class="order-item__price">$1.29</span>
                     </div>
                     <!-- Item 2 -->
                     <div class="order-item">
                         <img src="assets/img/One.jpg" alt="Neon Dreams" class="order-item__image">
                         <div class="order-item__info">
-                            <h3 class="order-item__title">La Ventana Marroncita</h3>
+                            <h3 class="order-item__title">One</h3>
                             <p class="order-item__artist">By Metalica</p>
                         </div>
-                        <span class="order-item__price">$9.99</span>
+                        <span class="order-item__price">$1.29</span>
                     </div>
                 </div>
                 <!-- Order Totals -->
                 <div class="order-totals">
                     <div class="totals-row">
                         <span class="totals-row__label">Subtotal</span>
-                        <span class="totals-row__value">$22.98</span>
+                        <span class="totals-row__value">$2.58</span>
                     </div>
                     <div class="totals-row">
                         <span class="totals-row__label">Taxes</span>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="totals-row totals-row--total">
                         <span class="totals-row__label">Total</span>
-                        <span class="totals-row__value">$24.82</span>
+                        <span class="totals-row__value">$4.42</span>
                     </div>
                 </div>
                 <!-- Place Order Button -->
