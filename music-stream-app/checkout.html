@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Checkout | MusicStream</title>
-    <link rel="stylesheet" href="CSS/views/checkout.css">
+    <link rel="stylesheet" href="/music-stream-app/CSS/views/checkout.css">
     <link rel="icon" href="./assets/icons/favico.ico" type="image/png">
 </head>
 <body>
@@ -12,13 +12,12 @@
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
-                <img src="./assets/img/logo.png" class="logo">
+                <img src="./assets/img/logo.png" class="logo" alt="logo">
                 <span class="header__logo-text">MusicStream</span>
             </div>
-            <a href="#" class="header__back-link">Back to Store</a>
+            <a href="/music-stream-app/index.html" class="header__back-link">Back to Store</a>
         </div>
     </header>
-
     <!-- Main Content -->
     <main class="checkout-page">
         <!-- Breadcrumb -->
@@ -37,17 +36,14 @@
                 </li>
             </ul>
         </nav>
-
         <!-- Page Title -->
         <h1 class="checkout-page__title">Secure Checkout</h1>
-
         <div class="checkout-container">
             <!-- Left Column - Forms -->
             <div class="checkout-forms">
                 <!-- Payment Method Section -->
                 <section class="form-section">
                     <h2 class="form-section__title">Payment Method</h2>
-                    
                     <div class="payment-method">
                         <div class="payment-method__header">
                             <span class="payment-method__label">Pay with Credit Card</span>
@@ -57,7 +53,6 @@
                                 <img src="amex-icon.svg" alt="American Express" class="payment-icon">
                             </div>
                         </div>
-
                         <form class="payment-form" action="#" method="POST">
                             <!-- Card Number -->
                             <div class="form-group">
@@ -69,12 +64,10 @@
                                         name="cardNumber" 
                                         class="form-input" 
                                         placeholder="0000 0000 0000 0000"
-                                        required
-                                    >
+                                        required>
                                     <span class="input-icon">💳</span>
                                 </div>
                             </div>
-
                             <!-- Expiration and CVC -->
                             <div class="form-row">
                                 <div class="form-group form-group--half">
@@ -85,8 +78,7 @@
                                         name="expiration" 
                                         class="form-input" 
                                         placeholder="MM/YY"
-                                        required
-                                    >
+                                        required>
                                 </div>
                                 <div class="form-group form-group--half">
                                     <label for="cvc" class="form-label">CVC</label>
@@ -97,13 +89,11 @@
                                             name="cvc" 
                                             class="form-input" 
                                             placeholder="123"
-                                            required
-                                        >
+                                            required>
                                         <span class="input-icon">🔒</span>
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Name on Card -->
                             <div class="form-group">
                                 <label for="card-name" class="form-label">Name on Card</label>
@@ -113,17 +103,14 @@
                                     name="cardName" 
                                     class="form-input" 
                                     placeholder="John Doe"
-                                    required
-                                >
+                                    required>
                             </div>
                         </form>
                     </div>
                 </section>
-
                 <!-- Billing Address Section -->
                 <section class="form-section">
                     <h2 class="form-section__title">Billing Address</h2>
-                    
                     <form class="billing-form" action="#" method="POST">
                         <!-- Country/Region -->
                         <div class="form-group">
@@ -138,7 +125,6 @@
                                 <span class="select-icon">▼</span>
                             </div>
                         </div>
-
                         <!-- Street Address -->
                         <div class="form-group">
                             <label for="street" class="form-label">Street Address</label>
@@ -148,10 +134,8 @@
                                 name="street" 
                                 class="form-input" 
                                 placeholder="123 Music Lane"
-                                required
-                            >
+                                required>
                         </div>
-
                         <!-- City and State -->
                         <div class="form-row">
                             <div class="form-group form-group--half">
@@ -162,8 +146,7 @@
                                     name="city" 
                                     class="form-input" 
                                     placeholder="Nashville"
-                                    required
-                                >
+                                    required>
                             </div>
                             <div class="form-group form-group--half">
                                 <label for="state" class="form-label">State/Province</label>
@@ -173,11 +156,9 @@
                                     name="state" 
                                     class="form-input" 
                                     placeholder="Tennessee"
-                                    required
-                                >
+                                    required>
                             </div>
                         </div>
-
                         <!-- Postal Code -->
                         <div class="form-group">
                             <label for="postal-code" class="form-label">Postal Code</label>
@@ -187,17 +168,14 @@
                                 name="postalCode" 
                                 class="form-input" 
                                 placeholder="37203"
-                                required
-                            >
+                                required>
                         </div>
                     </form>
                 </section>
             </div>
-
             <!-- Right Column - Order Summary -->
             <aside class="order-summary">
                 <h2 class="order-summary__title">Order Summary</h2>
-                
                 <!-- Order Items -->
                 <div class="order-items">
                     <!-- Item 1 -->
@@ -209,7 +187,6 @@
                         </div>
                         <span class="order-item__price">$1.29</span>
                     </div>
-
                     <!-- Item 2 -->
                     <div class="order-item">
                         <img src="assets/img/One.jpg" alt="Neon Dreams" class="order-item__image">
@@ -220,7 +197,6 @@
                         <span class="order-item__price">$1.29</span>
                     </div>
                 </div>
-
                 <!-- Order Totals -->
                 <div class="order-totals">
                     <div class="totals-row">
@@ -236,13 +212,11 @@
                         <span class="totals-row__value">$4.42</span>
                     </div>
                 </div>
-
                 <!-- Place Order Button -->
                 <button type="submit" class="btn btn--primary btn--large btn--checkout" form="payment-form">
                     <span class="btn__icon">🔒</span>
                     <span class="btn__text">Place Order & Pay $4.42</span>
                 </button>
-
                 <!-- Terms -->
                 <p class="order-summary__terms">
                     By placing this order, you agree to our 
