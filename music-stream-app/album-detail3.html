@@ -179,12 +179,18 @@
                 </section>
                 <!-- Tabs de información -->
                 <section class="album-tabs">
+                    <!-- Inputs radio ocultos para controlar las tabs con CSS puro -->
+                    <input type="radio" name="tabs" id="tab-about" class="tabs__input" checked>
+                    <input type="radio" name="tabs" id="tab-reviews" class="tabs__input">
+                    <input type="radio" name="tabs" id="tab-credits" class="tabs__input">
+                    
                     <div class="tabs__navigation">
-                        <button class="tabs__tab tabs__tab--active">About the Artist</button>
-                        <button class="tabs__tab">Reviews</button>
-                        <button class="tabs__tab">Credits</button>
+                        <label for="tab-about" class="tabs__tab tabs__tab--active">About the Artist</label>
+                        <label for="tab-reviews" class="tabs__tab">Reviews</label>
+                        <label for="tab-credits" class="tabs__tab">Credits</label>
                     </div>
                     <div class="tabs__content">
+                        <!-- Panel 1: About the Artist -->
                         <div class="tab-panel tab-panel--active">
                             <p class="artist__description">
                                 Violent Vira es una artista emergente de rock y metal alternativo que ha captado la atención global gracias a su estilo visceral y cargado de emoción. Con una propuesta que fusiona texturas del alt-rock con elementos de metal, la cantante y compositora se ha consolidado como una figura destacada de la escena actual, destacando por sus letras introspectivas y una puesta en escena dinámica que conecta profundamente con una nueva generación de oyentes.
@@ -192,6 +198,105 @@
                             <a href="#" class="artist__link">
                                 Read more on their page →
                             </a>
+                        </div>
+                        
+                        <!-- Panel 2: Reviews -->
+                        <div class="tab-panel">
+                            <h3 class="reviews__title">Recepción de la Crítica</h3>
+                            <div class="reviews__list">
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Kerrang!</span>
+                                        <span class="review__rating">★★★★☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Violent Vira entrega un álbum crudo y honesto que resuena con la angustia de una generación. 'Till Death Was Never Enough' es una declaración poderosa de una artista que no tiene miedo de mostrar vulnerabilidad."
+                                    </p>
+                                    <span class="review__date">Marzo 2023</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Alternative Press</span>
+                                        <span class="review__rating">★★★★★</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Una obra maestra del rock alternativo moderno. La voz de Violent Vira combina perfectamente melodías cautivadoras con riffs pesados, creando un sonido único que define el género en 2023."
+                                    </p>
+                                    <span class="review__date">Abril 2023</span>
+                                </div>
+                                <div class="review__item">
+                                    <div class="review__header">
+                                        <span class="review__source">Pitchfork</span>
+                                        <span class="review__rating">★★★★☆</span>
+                                    </div>
+                                    <p class="review__text">
+                                        "Un debut impresionante que establece a Violent Vira como una voz importante en el rock contemporáneo. Las letras personales y la producción impecable hacen de este álbum una escucha obligatoria."
+                                    </p>
+                                    <span class="review__date">Febrero 2023</span>
+                                </div>
+                            </div>
+                            <div class="reviews__summary">
+                                <h4>Puntuación General</h4>
+                                <div class="reviews__score">
+                                    <span class="score__number">85</span>
+                                    <span class="score__label">de 100 basado en 32 reseñas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel 3: Credits -->
+                        <div class="tab-panel">
+                            <h3 class="credits__title">Créditos del Álbum</h3>
+                            <div class="credits__grid">
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Banda y Músicos</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Violent Vira</strong> - Voz principal, guitarra rítmica, composición</li>
+                                        <li><strong>Marcus Steel</strong> - Guitarra líder</li>
+                                        <li><strong>Elena Cross</strong> - Bajo eléctrico</li>
+                                        <li><strong>Jake Morrison</strong> - Batería, percusión</li>
+                                        <li><strong>Sarah Chen</strong> - Teclados, sintetizadores</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Producción</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Productor Ejecutivo:</strong> David Richardson</li>
+                                        <li><strong>Productor Musical:</strong> Violent Vira, Tom Anderson</li>
+                                        <li><strong>Ingeniero de Sonido:</strong> Mike Thompson</li>
+                                        <li><strong>Mezclado en:</strong> Abbey Road Studios, Londres</li>
+                                        <li><strong>Masterizado por:</strong> Emily Watts en Sterling Sound, NYC</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Información Técnica</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Grabado en:</strong> Sound City Studios, Los Angeles</li>
+                                        <li><strong>Fechas de grabación:</strong> Septiembre - Diciembre 2022</li>
+                                        <li><strong>Sello discográfico:</strong> Independent Records</li>
+                                        <li><strong>Duración total:</strong> 48:23</li>
+                                        <li><strong>Formato:</strong> Digital, Vinilo, CD</li>
+                                    </ul>
+                                </div>
+                                <div class="credits__section">
+                                    <h4 class="credits__section-title">Arte y Diseño</h4>
+                                    <ul class="credits__list">
+                                        <li><strong>Portada:</strong> "Fractured Soul" por Alex Rivera</li>
+                                        <li><strong>Diseño gráfico:</strong> Violent Vira, Studio Creative</li>
+                                        <li><strong>Fotografía:</strong> Jessica Moore</li>
+                                        <li><strong>Dirección de Arte:</strong> Brandon Lee</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="credits__notes">
+                                <h4>Notas Adicionales</h4>
+                                <p>
+                                    Este álbum marca el debut oficial de Violent Vira como artista solista después de años de colaboración 
+                                    con diversas bandas underground. Grabado principalmente en analógico para capturar la calidez del sonido 
+                                    clásico del rock, el álbum fue dedicado a todos aquellos que han luchado contra la salud mental. 
+                                    El 15% de las ganancias se donan a organizaciones de apoyo psicológico para jóvenes artistas.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>

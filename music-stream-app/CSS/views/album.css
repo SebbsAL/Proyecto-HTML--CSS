@@ -88,7 +88,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     white-space: nowrap;
 }
 
-/* Barra de búsqueda */
 .header__search {
     flex-grow: 1;
     max-width: 400px;
@@ -131,7 +130,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     color: var(--text-secondary); 
 }
 
-/* Navegación */
 .header__nav {
     display: flex;
     margin-left: auto;
@@ -173,7 +171,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     width: 100%;
 }
 
-/* Acciones */
 .header__actions {
     display: flex;
     align-items: center;
@@ -273,7 +270,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: start;
 }
 
-/* Columna izquierda - Info del álbum */
 .album-info {
     position: sticky;
     top: calc(var(--header-height) + 2rem);
@@ -317,7 +313,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     margin: 0 0.25rem;
 }
 
-/* Botones de acción */
 .album-actions {
     display: flex;
     flex-direction: column;
@@ -387,7 +382,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     padding-top: 0.5rem;
 }
 
-/* Tracklist */
 .tracklist {
     margin-bottom: 3rem;
 }
@@ -469,9 +463,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     opacity: 0.6;
 }
 
-/* Tabs */
+/* =========================================
+   6. TABS CON CSS PURO
+   ========================================= */
 .album-tabs {
     margin-top: 2rem;
+}
+
+/* Ocultar los inputs radio */
+.tabs__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .tabs__navigation {
@@ -497,27 +500,48 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     color: var(--text-main);
 }
 
-.tabs__tab--active {
-    color: var(--primary-blue);
-}
-
-.tabs__tab--active::after {
+.tabs__tab::after {
     content: '';
     position: absolute;
     bottom: -1px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 3px;
     background-color: var(--primary-blue);
     border-radius: 3px 3px 0 0;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.tabs__tab:hover::after {
+    width: 100%;
+}
+
+/* Estilo para tab activa */
+#tab-about:checked ~ .tabs__navigation label[for="tab-about"],
+#tab-reviews:checked ~ .tabs__navigation label[for="tab-reviews"],
+#tab-credits:checked ~ .tabs__navigation label[for="tab-credits"] {
+    color: var(--primary-blue);
+}
+
+#tab-about:checked ~ .tabs__navigation label[for="tab-about"]::after,
+#tab-reviews:checked ~ .tabs__navigation label[for="tab-reviews"]::after,
+#tab-credits:checked ~ .tabs__navigation label[for="tab-credits"]::after {
+    width: 100%;
+}
+
+/* Paneles de contenido */
 .tab-panel {
     display: none;
+    opacity: 0;
+    transform: translateY(10px);
 }
 
-.tab-panel--active {
+/* Mostrar panel activo según el radio seleccionado */
+#tab-about:checked ~ .tabs__content .tab-panel:nth-child(1),
+#tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2),
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) {
     display: block;
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .artist__description {
@@ -538,7 +562,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 /* =========================================
-   6. MUSIC PLAYER (FOOTER)
+   7. MUSIC PLAYER (FOOTER)
    ========================================= */
 .player {
     position: fixed;
@@ -562,7 +586,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     gap: 2rem;
 }
 
-/* Info de la canción */
 .player__info {
     display: flex;
     align-items: center;
@@ -593,7 +616,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     color: var(--text-secondary);
 }
 
-/* Controles */
 .player__controls {
     display: flex;
     flex-direction: column;
@@ -644,7 +666,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     height: 24px;
 }
 
-/* Barra de progreso */
 .player__progress {
     display: flex;
     align-items: center;
@@ -701,7 +722,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     opacity: 1;
 }
 
-/* Volumen */
 .player__volume {
     display: flex;
     align-items: center;
@@ -751,10 +771,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 /* =========================================
-   7. RESPONSIVE DESIGN
+   8. RESPONSIVE DESIGN
    ========================================= */
 
-/* Tablets (769px - 1024px) */
 @media (max-width: 1024px) and (min-width: 769px) {
     .album-container {
         grid-template-columns: 300px 1fr;
@@ -771,7 +790,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Grande (481px - 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
     .header__search {
         order: 3;
@@ -833,7 +851,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Pequeño (320px - 480px) */
 @media (max-width: 480px) and (min-width: 320px) {
     .header {
         padding: 0.5rem 0.75rem;
@@ -953,7 +970,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
         white-space: nowrap;
     }
     
-    /* Player móvil */
     .player {
         height: auto;
         min-height: var(--player-height);
@@ -996,7 +1012,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Muy Pequeño (< 393px) */
 @media (max-width: 392px) {
     .header__logo-text {
         display: none;
@@ -1021,10 +1036,24 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Animaciones */
+/* =========================================
+   9. ANIMACIONES GENERALES
+   ========================================= */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .album-cover,
@@ -1040,7 +1069,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .tracklist { animation-delay: 0.3s; }
 .album-tabs { animation-delay: 0.4s; }
 
-/* Hover effects adicionales */
 .tracklist__row {
     cursor: pointer;
 }
@@ -1051,4 +1079,206 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .tracklist__row:hover .track__title {
     color: var(--primary-blue);
+}
+
+/* =========================================
+   10. ESTILOS PARA REVIEWS Y CREDITS
+   ========================================= */
+
+/* Reviews */
+.reviews__title,
+.credits__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.reviews__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review__item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.review__item:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-blue);
+}
+
+.review__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.review__source {
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 1rem;
+}
+
+.review__rating {
+    color: #fbbf24;
+    font-size: 1.1rem;
+}
+
+.review__text {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.review__date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.reviews__summary {
+    background-color: var(--bg-card-hover);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.reviews__summary h4 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.reviews__score {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.score__number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.score__label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Credits */
+.credits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.credits__section {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.credits__section:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+}
+
+.credits__section-title {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.credits__list {
+    list-style: none;
+    padding: 0;
+}
+
+.credits__list li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.credits__list strong {
+    color: var(--text-main);
+}
+
+.credits__notes {
+    background-color: var(--bg-card-hover);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-blue);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.credits__notes h4 {
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.credits__notes p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Animaciones escalonadas para Reviews */
+#tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2) .review__item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+#tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2) .review__item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+#tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2) .review__item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+#tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2) .reviews__summary {
+    animation-delay: 0.4s;
+}
+
+/* Animaciones escalonadas para Credits */
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) .credits__section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) .credits__section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) .credits__section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) .credits__section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+#tab-credits:checked ~ .tabs__content .tab-panel:nth-child(3) .credits__notes {
+    animation-delay: 0.5s;
 }
