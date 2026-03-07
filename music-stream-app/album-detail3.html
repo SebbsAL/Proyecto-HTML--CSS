@@ -16,7 +16,6 @@
                 <img src="/music-stream-app/assets/img/logo.png" class="header__logo-icon" alt="MusicStream logo">
                 <span class="header__logo-text">MusicStream</span>
             </div>
-
             <!-- Barra de búsqueda -->
             <div class="header__search">
                 <button class="search__button">
@@ -24,7 +23,6 @@
                 </button>
                 <input type="search" class="search__input" placeholder="  | Search artists, albums...">
             </div>
-
             <!-- Navegación principal -->
             <nav class="header__nav">
                 <ul class="nav__list">
@@ -39,11 +37,10 @@
                     </li>
                 </ul>
             </nav>
-
             <!-- Iconos de usuario -->
             <div class="header__actions">
                 <button class="action__button">
-                    <img class="action__icon" src="assets/icons/carrito-de-compras.svg" alt="carrito-de-compras">
+                    <a href="./cart.html"><img class="action__icon" src="assets/icons/carrito-de-compras.svg" alt="carrito-de-compras"></a>
                 </button>
                 <button class="action__button">
                     <img class="action__icon" src="assets/icons/amor-de-corazon.svg" alt="favorito">
@@ -54,7 +51,6 @@
             </div>
         </div>
     </header>
-
     <!-- Contenido principal -->
     <main class="main">
         <!-- Breadcrumb / Migas de pan -->
@@ -73,7 +69,6 @@
                 </li>
             </ul>
         </nav>
-
         <!-- Contenedor del álbum -->
         <div class="album-container">
             <!-- Columna izquierda - Información del álbum -->
@@ -93,13 +88,11 @@
                         <span class="album-details__genre"> Alternative/Independient, Rock</span>
                     </p>
                 </div>
-
                 <!-- Botones de acción -->
                 <div class="album-actions">
                     <button class="btn btn--primary btn--large">
                         Add Album to Cart - $9.99
                     </button>
-                    
                     <div class="album-actions__secondary">
                         <button class="btn btn--secondary">
                             <span class="btn__icon">♡</span>
@@ -112,13 +105,11 @@
                     </div>
                 </div>
             </div>
-
             <!-- Columna derecha - Tracklist y contenido -->
             <div class="album-content">
                 <!-- Lista de canciones -->
                 <section class="tracklist">
                     <h2 class="tracklist__title">Tracklist</h2>
-                    
                     <table class="tracklist__table">
                         <thead class="tracklist__header">
                             <tr class="tracklist__row tracklist__row--header">
@@ -130,7 +121,6 @@
                                 </th>
                             </tr>
                         </thead>
-                        
                         <tbody class="tracklist__body">
                             <!-- Track 1 -->
                             <tr class="tracklist__row">
@@ -145,7 +135,6 @@
                                     <span class="track__duration">2:55</span>
                                 </td>
                             </tr>
-
                             <!-- Track 2 -->
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">2</td>
@@ -159,7 +148,6 @@
                                     <span class="track__duration">3:09</span>
                                 </td>
                             </tr>
-
                             <!-- Track 3 -->
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">3</td>
@@ -173,7 +161,6 @@
                                     <span class="track__duration">3:22</span>
                                 </td>
                             </tr>
-
                             <!-- Track 4 -->
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">4</td>
@@ -190,7 +177,6 @@
                         </tbody>
                     </table>
                 </section>
-
                 <!-- Tabs de información -->
                 <section class="album-tabs">
                     <div class="tabs__navigation">
@@ -198,7 +184,6 @@
                         <button class="tabs__tab">Reviews</button>
                         <button class="tabs__tab">Credits</button>
                     </div>
-
                     <div class="tabs__content">
                         <div class="tab-panel tab-panel--active">
                             <p class="artist__description">
@@ -228,22 +213,21 @@
             <div class="player__controls">
                 <div class="player__buttons">
                     <button class="control__button">
-                        <img class="control__icon" src="assets/icons/reloj.svg">
+                        <img class="control__icon" src="assets/icons/reloj.svg" alt="reloj">
                     </button>
                     <button class="control__button">
-                        <img class="control__icon" src="assets/icons/back.svg">
+                        <img class="control__icon" src="assets/icons/back.svg" alt="backwards">
                     </button>
                     <button class="control__button control__button--play">
-                        <img class="control__icon" src="assets/icons/video-pause-button.svg">
+                        <img class="control__icon" src="assets/icons/video-pause-button.svg" alt="pause">
                     </button>
                     <button class="control__button">
-                        <img class="control__icon" src="assets/icons/fast-forward.svg">
+                        <img class="control__icon" src="assets/icons/fast-forward.svg" alt="forward">
                     </button>
                     <button class="control__button">
-                        <img class="control__icon" src="assets/icons/cicle.svg">
+                        <img class="control__icon" src="assets/icons/cicle.svg" alt="bucle">
                     </button>
                 </div>
-                
                 <div class="player__progress">
                     <span class="progress__time progress__time--current">0:45</span>
                     <div class="progress__bar">
@@ -255,7 +239,7 @@
             <!-- Control de volumen -->
             <div class="player__volume">
                 <button class="volume__button">
-                    <img class="volume__icon" src="assets/icons/volume-up.svg">
+                    <img class="volume__icon" src="assets/icons/volume-up.svg" alt="volumen">
                 </button>
                 <div class="volume__slider">
                     <div class="volume__fill"></div>
