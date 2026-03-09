@@ -57,7 +57,7 @@
         <nav class="breadcrumb">
             <ul class="breadcrumb__list">
                 <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__link">Home</a>
+                    <a href="index.html" class="breadcrumb__link">Home</a>
                 </li>
                 <li class="breadcrumb__separator">/</li>
                 <li class="breadcrumb__item">
@@ -165,13 +165,27 @@
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">4</td>
                                 <td class="tracklist__cell tracklist__cell--title">
-                                    <span class="track__title">Collar Of Truth</span>
+                                    <span class="track__title">
+                                        <a href="player4.html">Collar Of Truth</a></span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--artist">
                                     <span class="track__artist">Violent Vira</span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--duration">
                                     <span class="track__duration">3:07</span>
+                                </td>
+                            </tr>
+                            <!-- Track 5 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">5</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">God Complex</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Violent Vira</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">2:09</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -183,7 +197,6 @@
                     <input type="radio" name="tabs" id="tab-about" class="tabs__input" checked>
                     <input type="radio" name="tabs" id="tab-reviews" class="tabs__input">
                     <input type="radio" name="tabs" id="tab-credits" class="tabs__input">
-                    
                     <div class="tabs__navigation">
                         <label for="tab-about" class="tabs__tab tabs__tab--active">About the Artist</label>
                         <label for="tab-reviews" class="tabs__tab">Reviews</label>
@@ -195,11 +208,10 @@
                             <p class="artist__description">
                                 Violent Vira es una artista emergente de rock y metal alternativo que ha captado la atención global gracias a su estilo visceral y cargado de emoción. Con una propuesta que fusiona texturas del alt-rock con elementos de metal, la cantante y compositora se ha consolidado como una figura destacada de la escena actual, destacando por sus letras introspectivas y una puesta en escena dinámica que conecta profundamente con una nueva generación de oyentes.
                             </p>
-                            <a href="#" class="artist__link">
+                            <a href="https://open.spotify.com/intl-es/artist/298H8XdYsBHii98wfAZT1S" class="artist__link" target="_blank">
                                 Read more on their page →
                             </a>
                         </div>
-                        
                         <!-- Panel 2: Reviews -->
                         <div class="tab-panel">
                             <h3 class="reviews__title">Recepción de la Crítica</h3>
@@ -243,7 +255,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Panel 3: Credits -->
                         <div class="tab-panel">
                             <h3 class="credits__title">Créditos del Álbum</h3>
@@ -308,7 +319,7 @@
         <div class="player__container">
             <!-- Información de la canción actual -->
             <div class="player__info">
-                <img src="/music-stream-app/assets/img/violentvira.jpeg" alt="One" class="player__thumbnail">
+                <img src="/music-stream-app/assets/img/violentvira.jpeg" alt="violentvira cover" class="player__thumbnail">
                 <div class="player__track-info">
                     <h4 class="player__track-title">You're Not Gone, You're Just Dead!</h4>
                     <p class="player__track-artist">Violent Vira</p>
@@ -345,10 +356,8 @@
             <div class="player__volume">
                 <button class="volume__button">
                     <img class="volume__icon" src="assets/icons/volume-up.svg" alt="volumen">
+                    <input type="range" class="volume__slider" min="0" max="100" value="70">
                 </button>
-                <div class="volume__slider">
-                    <div class="volume__fill"></div>
-                </div>
             </div>
         </div>
     </footer>

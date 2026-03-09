@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABLES Y RESET GLOBAL
+1. VARIABLES Y RESET GLOBAL
    ========================================= */
 :root {
     /* Colores */
@@ -659,11 +659,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     justify-content: center;
     transition: background-color 0.3s ease;
 }
-
-.volume__button:hover {
-    background-color: var(--bg-card);
-}
-
 .volume__icon {
     width: 20px;
     height: 20px;

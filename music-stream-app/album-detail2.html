@@ -57,7 +57,7 @@
         <nav class="breadcrumb">
             <ul class="breadcrumb__list">
                 <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__link">Home</a>
+                    <a href="index.html" class="breadcrumb__link">Home</a>
                 </li>
                 <li class="breadcrumb__separator">/</li>
                 <li class="breadcrumb__item">
@@ -165,13 +165,27 @@
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">4</td>
                                 <td class="tracklist__cell tracklist__cell--title">
-                                    <span class="track__title">One</span>
+                                    <span class="track__title">
+                                        <a href="player2.html">One</a></span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--artist">
                                     <span class="track__artist">Metallica</span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--duration">
                                     <span class="track__duration">7:26</span>
+                                </td>
+                            </tr>
+                            <!-- Track 5 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">5</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">To Live Is To Die</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Metallica</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">9:48</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -195,11 +209,10 @@
                             <p class="artist__description">
                                 Considerada una de las figuras definitivas del "Big Four" del thrash metal, Metallica ha moldeado el sonido del rock pesado durante más de cuatro décadas. Con una trayectoria que abarca desde la velocidad técnica de los 80 hasta el éxito masivo global, la banda liderada por James Hetfield y Lars Ulrich combina riffs icónicos, una energía imparable en directo y un legado que los posiciona como leyendas vivientes del género.
                             </p>
-                            <a href="#" class="artist__link">
+                            <a href="https://open.spotify.com/intl-es/artist/2ye2Wgw4gimLv2eAKyk1NB" class="artist__link" target="_blank">
                                 Read more on their page →
                             </a>
                         </div>
-                        
                         <!-- Panel 2: Reviews -->
                         <div class="tab-panel">
                             <h3 class="reviews__title">Recepción de la Crítica</h3>
@@ -243,7 +256,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Panel 3: Credits -->
                         <div class="tab-panel">
                             <h3 class="credits__title">Créditos del Álbum</h3>
@@ -306,7 +318,7 @@
             <div class="player__info">
                 <img src="assets/img/One.jpg" alt="one song cover" class="player__thumbnail">
                 <div class="player__track-info">
-                    <h4 class="player__track-title">One</h4>
+                    <h4 class="player__track-title">Harvester Of Sorrow</h4>
                     <p class="player__track-artist">Metallica</p>
                 </div>
             </div>
@@ -330,21 +342,19 @@
                     </button>
                 </div>
                 <div class="player__progress">
-                    <span class="progress__time progress__time--current">1:23</span>
+                    <span class="progress__time progress__time--current">1:30</span>
                     <div class="progress__bar">
                         <div class="progress__fill"></div>
                     </div>
-                    <span class="progress__time progress__time--total">7:26</span>
+                    <span class="progress__time progress__time--total">5:45</span>
                 </div>
             </div>
             <!-- Control de volumen -->
             <div class="player__volume">
                 <button class="volume__button">
                     <img class="volume__icon" src="assets/icons/volume-up.svg" alt="volumen">
+                    <input type="range" class="volume__slider" min="0" max="100" value="70">
                 </button>
-                <div class="volume__slider">
-                    <div class="volume__fill"></div>
-                </div>
             </div>
         </div>
     </footer>

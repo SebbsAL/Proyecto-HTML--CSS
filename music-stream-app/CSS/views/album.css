@@ -22,13 +22,11 @@
     --radius-md: 16px;
     --radius-sm: 8px;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-body);
@@ -39,14 +37,12 @@ body {
     min-width: 320px;
     padding-bottom: var(--player-height);
 }
-
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 button { border: none; background: none; cursor: pointer; font-family: inherit; }
-
 /* =========================================
-   2. HEADER
+2. HEADER
    ========================================= */
 .header {
     position: sticky;
@@ -60,7 +56,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     padding: 0.75rem 1.5rem;
     width: 100%;
 }
-
 .header__container {
     width: 100%;
     max-width: 1600px;
@@ -69,25 +64,21 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: center;
     gap: 2rem;
 }
-
 .header__logo {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
 }
-
 .header__logo-icon { 
     height: 32px; 
     width: auto;
 }
-
 .header__logo-text { 
     font-size: 1.25rem; 
     font-weight: 700;
     white-space: nowrap;
 }
-
 .header__search {
     flex-grow: 1;
     max-width: 400px;
@@ -98,25 +89,21 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: center;
     transition: border 0.3s;
 }
-
 .header__search:focus-within { 
     border: 1px solid var(--primary-blue); 
 }
-
 .search__button { 
     background: none; 
     border: none; 
     margin-right: 10px;
     padding: 0;
 }
-
 .search__icon { 
     width: 20px; 
     height: 20px; 
     filter: invert(1); 
     opacity: 0.7; 
 }
-
 .search__input {
     background: transparent; 
     border: none; 
@@ -125,21 +112,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     outline: none;
     font-size: 0.9rem;
 }
-
 .search__input::placeholder { 
     color: var(--text-secondary); 
 }
-
 .header__nav {
     display: flex;
     margin-left: auto;
 }
-
 .nav__list {
     display: flex;
     gap: 2.5rem;
 }
-
 .nav__link {
     font-size: 0.95rem;
     font-weight: 500;
@@ -149,7 +132,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     display: block;
     position: relative;
 }
-
 .nav__link::after {
     content: '';
     position: absolute;
@@ -161,23 +143,19 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     border-radius: 3px 3px 0 0;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .nav__link:hover,
 .nav__link--active { 
     color: var(--text-main); 
 }
-
 .nav__link:hover::after {
     width: 100%;
 }
-
 .header__actions {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-left: 1.5rem;
 }
-
 .action__button {
     width: 40px;
     height: 40px;
@@ -188,22 +166,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     justify-content: center;
     transition: background-color 0.3s ease;
 }
-
 .action__button:hover {
     background-color: var(--bg-card-hover);
 }
-
 .action__icon {
     width: 20px;
     height: 20px;
     filter: invert(1);
     opacity: 0.9;
 }
-
 .user__profile {
     margin-left: 0.5rem;
 }
-
 .user__avatar {
     width: 40px; 
     height: 40px; 
@@ -213,112 +187,93 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     cursor: pointer;
     transition: border-color 0.3s ease;
 }
-
 .user__avatar:hover {
     border-color: var(--primary-blue);
 }
-
 /* =========================================
-   3. BREADCRUMB
+3. BREADCRUMB
    ========================================= */
 .breadcrumb {
     padding: 1.5rem 2rem;
     max-width: 1600px;
     margin: 0 auto;
 }
-
 .breadcrumb__list {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
-
 .breadcrumb__link {
     color: var(--text-secondary);
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
-
 .breadcrumb__link:hover {
     color: var(--text-main);
 }
-
 .breadcrumb__link--current {
     color: var(--text-main);
     font-weight: 600;
 }
-
 .breadcrumb__separator {
     color: var(--text-secondary);
     opacity: 0.6;
 }
-
 /* =========================================
-   4. ALBUM CONTAINER
+4. ALBUM CONTAINER
    ========================================= */
 .main {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 2rem 2rem;
 }
-
 .album-container {
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 3rem;
     align-items: start;
 }
-
 .album-info {
     position: sticky;
     top: calc(var(--header-height) + 2rem);
 }
-
 .album-cover {
     border-radius: var(--radius-md);
     overflow: hidden;
     margin-bottom: 1.5rem;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
-
 .album-cover__image {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
 }
-
 .album-details {
     margin-bottom: 1.5rem;
 }
-
 .album-details__title {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 0.75rem;
     line-height: 1.2;
 }
-
 .album-details__meta {
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
-
 .album-details__artist {
     font-weight: 600;
     color: var(--text-main);
 }
-
 .album-details__separator {
     margin: 0 0.25rem;
 }
-
 .album-actions {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -331,67 +286,55 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     transition: all 0.3s ease;
     cursor: pointer;
 }
-
 .btn--primary {
     background-color: var(--primary-blue);
     color: white;
     box-shadow: 0 4px 15px rgba(41, 98, 255, 0.4);
 }
-
 .btn--primary:hover {
     background-color: #1e4bd1;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(41, 98, 255, 0.5);
 }
-
 .btn--large {
     padding: 1rem 2rem;
     font-size: 1rem;
 }
-
 .btn--secondary {
     background-color: var(--bg-card);
     color: var(--text-main);
     border: 1px solid var(--border-color);
 }
-
 .btn--secondary:hover {
     background-color: var(--bg-card-hover);
     border-color: var(--text-secondary);
 }
-
 .album-actions__secondary {
     display: flex;
     gap: 0.75rem;
 }
-
 .album-actions__secondary .btn {
     flex: 1;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
 }
-
 .btn__icon {
     font-size: 1.1rem;
 }
-
 /* =========================================
-   5. ALBUM CONTENT (DERECHA)
+5. ALBUM CONTENT (DERECHA)
    ========================================= */
 .album-content {
     padding-top: 0.5rem;
 }
-
 .tracklist {
     margin-bottom: 3rem;
 }
-
 .tracklist__title {
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
-
 .tracklist__table {
     width: 100%;
     border-collapse: collapse;
@@ -399,91 +342,74 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     border-radius: var(--radius-md);
     overflow: hidden;
 }
-
 .tracklist__row {
     border-bottom: 1px solid var(--border-color);
     transition: background-color 0.3s ease;
 }
-
 .tracklist__row:last-child {
     border-bottom: none;
 }
-
 .tracklist__row:hover {
     background-color: var(--bg-card-hover);
 }
-
 .tracklist__row--header {
     background-color: rgba(255, 255, 255, 0.03);
 }
-
 .tracklist__cell {
     padding: 1rem 1.25rem;
     text-align: left;
     font-size: 0.95rem;
 }
-
 .tracklist__cell--number {
     width: 60px;
     color: var(--text-secondary);
     font-weight: 500;
 }
-
 .tracklist__cell--title {
     font-weight: 600;
     color: var(--text-main);
 }
-
 .tracklist__cell--artist {
     color: var(--text-secondary);
 }
-
 .tracklist__cell--duration {
     width: 80px;
     text-align: right;
     color: var(--text-secondary);
 }
-
 .track__title {
     color: var(--text-main);
 }
-
 .track__artist {
     color: var(--text-secondary);
 }
-
 .track__duration {
     font-variant-numeric: tabular-nums;
 }
-
 .duration__icon {
     width: 18px;
     height: 18px;
     filter: invert(1);
     opacity: 0.6;
 }
-
 /* =========================================
-   6. TABS CON CSS PURO
+6. TABS CON CSS PURO
    ========================================= */
 .album-tabs {
     margin-top: 2rem;
 }
-
 /* Ocultar los inputs radio */
 .tabs__input {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 }
-
 .tabs__navigation {
     display: flex;
     gap: 2rem;
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 1.5rem;
 }
-
 .tabs__tab {
     background: none;
     border: none;
@@ -495,11 +421,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     position: relative;
     transition: color 0.3s ease;
 }
-
 .tabs__tab:hover {
     color: var(--text-main);
 }
-
 .tabs__tab::after {
     content: '';
     position: absolute;
@@ -511,31 +435,26 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     border-radius: 3px 3px 0 0;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .tabs__tab:hover::after {
     width: 100%;
 }
-
 /* Estilo para tab activa */
 #tab-about:checked ~ .tabs__navigation label[for="tab-about"],
 #tab-reviews:checked ~ .tabs__navigation label[for="tab-reviews"],
 #tab-credits:checked ~ .tabs__navigation label[for="tab-credits"] {
     color: var(--primary-blue);
 }
-
 #tab-about:checked ~ .tabs__navigation label[for="tab-about"]::after,
 #tab-reviews:checked ~ .tabs__navigation label[for="tab-reviews"]::after,
 #tab-credits:checked ~ .tabs__navigation label[for="tab-credits"]::after {
     width: 100%;
 }
-
 /* Paneles de contenido */
 .tab-panel {
     display: none;
     opacity: 0;
     transform: translateY(10px);
 }
-
 /* Mostrar panel activo según el radio seleccionado */
 #tab-about:checked ~ .tabs__content .tab-panel:nth-child(1),
 #tab-reviews:checked ~ .tabs__content .tab-panel:nth-child(2),
@@ -543,26 +462,22 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     display: block;
     animation: fadeInUp 0.5s ease-out forwards;
 }
-
 .artist__description {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1rem;
     font-size: 0.95rem;
 }
-
 .artist__link {
     color: var(--primary-blue);
     font-weight: 600;
     transition: color 0.3s ease;
 }
-
 .artist__link:hover {
     color: #5a8bff;
 }
-
 /* =========================================
-   7. MUSIC PLAYER (FOOTER)
+7. MUSIC PLAYER (FOOTER)
    ========================================= */
 .player {
     position: fixed;
@@ -575,7 +490,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     z-index: 1000;
     padding: 0 2rem;
 }
-
 .player__container {
     max-width: 1600px;
     margin: 0 auto;
@@ -585,50 +499,42 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     align-items: center;
     gap: 2rem;
 }
-
 .player__info {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 .player__thumbnail {
     width: 56px;
     height: 56px;
     border-radius: var(--radius-sm);
     object-fit: cover;
 }
-
 .player__track-info {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
-
 .player__track-title {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-main);
 }
-
 .player__track-artist {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
-
 .player__controls {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
 }
-
 .player__buttons {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
-
 .control__button {
     width: 36px;
     height: 36px;
@@ -638,34 +544,28 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     justify-content: center;
     transition: all 0.3s ease;
 }
-
 .control__button:hover {
     background-color: var(--bg-card);
 }
-
 .control__button--play {
     width: 48px;
     height: 48px;
     background-color: var(--primary-blue);
     box-shadow: 0 4px 15px rgba(41, 98, 255, 0.4);
 }
-
 .control__button--play:hover {
     background-color: #1e4bd1;
     transform: scale(1.05);
 }
-
 .control__icon {
     width: 20px;
     height: 20px;
     filter: invert(1);
 }
-
 .control__button--play .control__icon {
     width: 24px;
     height: 24px;
 }
-
 .player__progress {
     display: flex;
     align-items: center;
@@ -673,7 +573,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     width: 100%;
     max-width: 600px;
 }
-
 .progress__time {
     font-size: 0.8rem;
     color: var(--text-secondary);
@@ -681,7 +580,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     min-width: 40px;
     text-align: center;
 }
-
 .progress__bar {
     flex-grow: 1;
     height: 4px;
@@ -691,11 +589,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     position: relative;
     overflow: hidden;
 }
-
 .progress__bar:hover {
     height: 6px;
 }
-
 .progress__fill {
     width: 27%;
     height: 100%;
@@ -703,7 +599,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     border-radius: 2px;
     position: relative;
 }
-
 .progress__fill::after {
     content: '';
     position: absolute;
@@ -717,18 +612,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .progress__bar:hover .progress__fill::after {
     opacity: 1;
 }
-
 .player__volume {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     justify-content: flex-end;
 }
-
 .volume__button {
     width: 36px;
     height: 36px;
@@ -738,11 +630,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     justify-content: center;
     transition: background-color 0.3s ease;
 }
-
-.volume__button:hover {
-    background-color: var(--bg-card);
-}
-
 .volume__icon {
     width: 20px;
     height: 20px;

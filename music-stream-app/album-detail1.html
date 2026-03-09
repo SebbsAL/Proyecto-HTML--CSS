@@ -176,6 +176,19 @@
                                     <span class="track__duration">5:02</span>
                                 </td>
                             </tr>
+                            <!-- Track 5 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">5</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">
+                                        <a href="player1.html">Tu Eres La Reina</a></span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Diomedes Diaz</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">3:56</span>
+                                </td>
                         </tbody>
                     </table>
                 </section>
@@ -185,7 +198,6 @@
                     <input type="radio" name="tabs" id="tab-about" class="tabs__input" checked>
                     <input type="radio" name="tabs" id="tab-reviews" class="tabs__input">
                     <input type="radio" name="tabs" id="tab-credits" class="tabs__input">
-                    
                     <div class="tabs__navigation">
                         <label for="tab-about" class="tabs__tab tabs__tab--active">About the Artist</label>
                         <label for="tab-reviews" class="tabs__tab">Reviews</label>
@@ -201,7 +213,6 @@
                                 Read more on their page →
                             </a>
                         </div>
-                        
                         <!-- Panel 2: Reviews -->
                         <div class="tab-panel">
                             <h3 class="reviews__title">Recepción de la Crítica</h3>
@@ -245,7 +256,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Panel 3: Credits -->
                         <div class="tab-panel">
                             <h3 class="credits__title">Créditos del Álbum</h3>
@@ -346,10 +356,8 @@
             <div class="player__volume">
                 <button class="volume__button">
                     <img class="volume__icon" src="assets/icons/volume-up.svg" alt="indicador volumen">
+                    <input type="range" class="volume__slider" min="0" max="100" value="70">
                 </button>
-                <div class="volume__slider">
-                    <div class="volume__fill"></div>
-                </div>
             </div>
         </div>
     </footer>
