@@ -57,7 +57,7 @@
         <nav class="breadcrumb">
             <ul class="breadcrumb__list">
                 <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__link">Home</a>
+                    <a href="index.html" class="breadcrumb__link">Home</a>
                 </li>
                 <li class="breadcrumb__separator">/</li>
                 <li class="breadcrumb__item">
@@ -165,13 +165,27 @@
                             <tr class="tracklist__row">
                                 <td class="tracklist__cell tracklist__cell--number">4</td>
                                 <td class="tracklist__cell tracklist__cell--title">
-                                    <span class="track__title">Creep</span>
+                                    <span class="track__title">
+                                        <a href="player3.html">Creep</a></span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--artist">
                                     <span class="track__artist">Radiohead</span>
                                 </td>
                                 <td class="tracklist__cell tracklist__cell--duration">
                                     <span class="track__duration">3:58</span>
+                                </td>
+                            </tr>
+                            <!-- Track 5 -->
+                            <tr class="tracklist__row">
+                                <td class="tracklist__cell tracklist__cell--number">5</td>
+                                <td class="tracklist__cell tracklist__cell--title">
+                                    <span class="track__title">I Can't</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--artist">
+                                    <span class="track__artist">Radiohead</span>
+                                </td>
+                                <td class="tracklist__cell tracklist__cell--duration">
+                                    <span class="track__duration">4:13</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -195,11 +209,10 @@
                             <p class="artist__description">
                                 Radiohead es una de las bandas más influyentes y visionarias del rock contemporáneo, reconocida por su constante evolución y experimentación sonora. Desde sus inicios en el rock alternativo hasta su inmersión en la electrónica, el jazz y la vanguardia, el quinteto británico ha desafiado las convenciones de la industria con letras introspectivas, texturas atmosféricas y una maestría compositiva única, consolidándose como un referente indispensable para los amantes de la música que buscan profundidad y vanguardia.
                             </p>
-                            <a href="#" class="artist__link">
+                            <a href="https://open.spotify.com/intl-es/artist/4Z8W4fKeB5YxbusRsdQVPb" class="artist__link" target="_blank">
                                 Read more on their page →
                             </a>
                         </div>
-                        
                         <!-- Panel 2: Reviews -->
                         <div class="tab-panel">
                             <h3 class="reviews__title">Recepción de la Crítica</h3>
@@ -243,7 +256,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Panel 3: Credits -->
                         <div class="tab-panel">
                             <h3 class="credits__title">Créditos del Álbum</h3>
@@ -310,9 +322,9 @@
         <div class="player__container">
             <!-- Información de la canción actual -->
             <div class="player__info">
-                <img src="/music-stream-app/assets/img/radcan.jpg" alt="Starlight Serenade" class="player__thumbnail">
+                <img src="/music-stream-app/assets/img/radcan.jpg" alt="radiohead song cover" class="player__thumbnail">
                 <div class="player__track-info">
-                    <h4 class="player__track-title">Creep</h4>
+                    <h4 class="player__track-title">Stop Whispering</h4>
                     <p class="player__track-artist">Radiohead</p>
                 </div>
             </div>
@@ -347,10 +359,8 @@
             <div class="player__volume">
                 <button class="volume__button">
                     <img class="volume__icon" src="assets/icons/volume-up.svg" alt="volumen">
+                    <input type="range" class="volume__slider" min="0" max="100" value="70">
                 </button>
-                <div class="volume__slider">
-                    <div class="volume__fill"></div>
-                </div>
             </div>
         </div>
     </footer>
