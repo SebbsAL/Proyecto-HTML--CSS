@@ -407,15 +407,13 @@ body {
     background-color: var(--color-primary);
     color: white;
 }
-
 .btn--primary:hover {
     background-color: var(--color-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
-
 /* ==========================================
-   RESPONSIVE - Media Queries
+RESPONSIVE - Media Queries
    ========================================== */
 
 /* Tablets y pantallas medianas */
@@ -428,7 +426,6 @@ body {
         gap: var(--spacing-md);
     }
 }
-
 /* Móviles grandes y tablets pequeñas */
 @media screen and (max-width: 768px) {
     /* Ocultar navegación en header */
@@ -625,4 +622,11 @@ input:focus-visible {
 
 .confirmation-card {
     animation: fadeIn 0.5s ease-out;
+}
+/* Esto obliga a cualquier enlace dentro de un botón a ser blanco, sí o sí */
+.btn a, 
+.btn a:visited, 
+.btn a:link {
+    color: #ffffff !important;
+    text-decoration: none !important;
 }
