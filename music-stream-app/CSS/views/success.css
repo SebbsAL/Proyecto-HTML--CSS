@@ -481,16 +481,17 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     color: white;
     box-shadow: 0 4px 15px rgba(41, 98, 255, 0.4);
 }
-
 .btn--primary:hover {
     background-color: #1e4bd1;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(41, 98, 255, 0.5);
 }
+/* ==========================================
+RESPONSIVE - Media Queries
+   ========================================== */
 
 /* =========================================
 8. RESPONSIVE DESIGN (Mismo que las demás páginas)
-========================================= */
 
 /* Tablets (769px - 1024px) */
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -514,6 +515,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
         padding: 1.5rem;
     }
 }
+/* Móviles grandes y tablets pequeñas */
+@media screen and (max-width: 768px) {
+    /* Ocultar navegación en header */
 
 /* Mobile Grande (481px - 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
@@ -733,6 +737,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 .confirmation-card {
+    animation: fadeIn 0.5s ease-out;
+}
+/* Esto obliga a cualquier enlace dentro de un botón a ser blanco, sí o sí */
+.btn a, 
+.btn a:visited, 
+.btn a:link {
+    color: #ffffff !important;
+    text-decoration: none !important;
     animation: fadeIn 0.6s ease forwards;
 }
 
@@ -762,7 +774,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* =========================================
 10. UTILIDADES
-========================================= */
 img {
     max-width: 100%;
     height: auto;
