@@ -44,7 +44,7 @@ img { max-width: 100%; display: block; }
 button { border: none; background: none; cursor: pointer; font-family: inherit; }
 
 /* =========================================
-2. STORE HEADER (Diseño Único)
+2. STORE HEADER
 ========================================= */
 .store-header {
     position: sticky;
@@ -211,7 +211,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 /* =========================================
-3. HERO SECTION (Diseño Premium)
+3. HERO SECTION
 ========================================= */
 .store-hero {
     position: relative;
