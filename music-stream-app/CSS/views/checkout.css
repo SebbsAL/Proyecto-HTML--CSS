@@ -40,7 +40,7 @@ HEADER
     justify-content: space-between;
     align-items: center;
 }
-/* Logo con icono azul */
+/* Logo*/
 .header__logo {
     display: flex;
     align-items: center;
@@ -191,7 +191,7 @@ SECCIONES DE FORMULARIO
     padding: 2px;
 }
 /* ============================================
-FORMULARIOS Y INPUTS
+FORMULARIOS E INPUTS
    ============================================ */
 .form-group {
     margin-bottom: 1.25rem;
@@ -354,7 +354,7 @@ TOTALES DE LA ORDEN
     color: var(--text-primary);
     font-weight: 500;
 }
-/* Fila de total (más grande y negrita) */
+/* Fila de total*/
 .totals-row--total {
     margin-top: 0.5rem;
     padding-top: 1rem;
@@ -486,5 +486,5 @@ UTILIDADES Y MEJORAS DE ACCESIBILIDAD
 }
 /* Asegurar que los inputs sean legibles en móvil */
 input, select, textarea {
-    font-size: 16px; /* Previene zoom en iOS */
+    font-size: 16px; 
 }

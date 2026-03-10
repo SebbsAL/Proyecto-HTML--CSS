@@ -41,7 +41,7 @@ img { max-width: 100%; display: block; }
 button { border: none; background: none; cursor: pointer; font-family: inherit; }
 
 /* =========================================
-2. HEADER & SIDEBAR (Same as previous pages)
+2. HEADER & SIDEBAR
 ========================================= */
 .header {
     position: sticky;

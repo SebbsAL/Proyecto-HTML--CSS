@@ -520,7 +520,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Grande (481px - 768px) */
+/* Movil Grande (481px - 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
     .header__nav {
         display: none;
@@ -579,7 +579,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Pequeño (320px - 480px) */
+/* Movil Pequeño (320px - 480px) */
 @media (max-width: 480px) and (min-width: 320px) {
     .header {
         padding: 0.5rem 0.75rem;
@@ -679,7 +679,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     }
 }
 
-/* Mobile Muy Pequeño (< 393px) */
+/* Movil Muy Pequeño (< 393px) */
 @media (max-width: 392px) {
     .header__logo-text {
         display: none;
@@ -742,20 +742,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     animation-delay: 0.3s;
     opacity: 0;
 }
-
-/* Empty Cart State (opcional) */
-.cart-items:empty::after {
-    content: 'Your cart is empty';
-    display: block;
-    text-align: center;
-    padding: 4rem 2rem;
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    background-color: var(--bg-card);
-    border-radius: var(--radius-md);
-    border: 2px dashed var(--border-color);
-}
-
 /* Hover effects adicionales */
 .cart-item__title:hover {
     color: var(--primary-blue);
