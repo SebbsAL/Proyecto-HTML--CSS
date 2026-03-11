@@ -183,8 +183,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* Usuario */
 .header__user {
-    order: 4;
-    flex-shrink: 0;
     margin-left: 1rem;
 }
 
