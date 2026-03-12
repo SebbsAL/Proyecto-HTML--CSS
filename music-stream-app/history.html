@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicStream | History</title>
+    <link rel="stylesheet" href="CSS/views/history.css">
+    <link rel="icon" href="./assets/icons/favico.ico" type="image/png">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="./assets/img/logo.png" class="header__logo-icon" alt="MusicStream logo">
+                <span class="header__logo-text">MusicStream</span>
+            </div>
+            <div class="header__search">
+                <button class="search__button">
+                    <img class="search__icon" src="./assets/icons/busqueda-de-lupa_1.svg" alt="lupa de busqueda">
+                </button>
+                <input type="search" class="search__input" placeholder="  | Search artists, albums...">
+            </div>
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link nav__link--active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Browse</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Library</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="action__button">
+                    <a href="./cart.html"><img class="action__icon" src="assets/icons/carrito-de-compras.svg" alt="carrito-de-compras"></a>
+                </button>
+                <button class="action__button">
+                    <img class="action__icon" src="assets/icons/notificacion.svg" alt="campana-notificacion">
+                </button>
+                <div class="user__profile">
+                    <img src="assets/img/jugador.png" alt="User profile" class="user__avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <div class="content__header">
+            <h1 class="content__title">Historial de Compras</h1>
+            <p class="content__subtitle">Revisa las compras que has realizado y vuelve a descargar tus canciones favoritas</p>
+        </div>
+        <section class="tracklist">
+            <table class="tracklist__table">
+                <thead class="tracklist__header">
+                    <tr class="tracklist__row tracklist__row--header">
+                        <th class="tracklist__cell tracklist__cell--number">Order ID</th>
+                        <th class="tracklist__cell tracklist__cell--title">Fecha</th>
+                        <th class="tracklist__cell tracklist__cell--artist">Total</th>
+                        <th class="tracklist__cell tracklist__cell--artist">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="tracklist__body">
+                    <tr class="tracklist__row">
+                        <td class="tracklist__cell tracklist__cell--number">#MTS - 2026 - 1A2X</td>
+                        <td class="tracklist__cell tracklist__cell--title">
+                            <span class="track__title">06 Octubre 2026</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--artist">
+                            <span class="track__artist">10.50</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--duration">
+                            <button class="btn btn--primary btn--large">
+                                <span>Descargar</span>
+                                <img src="./assets/icons/participacion.svg" alt="boton compartir">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="tracklist__row">
+                        <td class="tracklist__cell tracklist__cell--number">#MTS - 2025 - 2A3X</td>
+                        <td class="tracklist__cell tracklist__cell--title">
+                            <span class="track__title">29 Agosto 2025</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--artist">
+                            <span class="track__artist">9.99</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--duration">
+                            <button class="btn btn--primary btn--large">
+                                <span>Descargar</span>
+                                <img src="./assets/icons/participacion.svg" alt="boton compartir">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="tracklist__row">
+                        <td class="tracklist__cell tracklist__cell--number">#MTS - 2024 - 4A7X</td>
+                        <td class="tracklist__cell tracklist__cell--title">
+                            <span class="track__title">15 Julio 2024</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--artist">
+                            <span class="track__artist">10.78</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--duration">
+                            <button class="btn btn--primary btn--large">
+                                <span>Descargar</span>
+                                <img src="./assets/icons/participacion.svg" alt="boton compartir">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="tracklist__row">
+                        <td class="tracklist__cell tracklist__cell--number">#MTS - 2023 - 5A6X</td>
+                        <td class="tracklist__cell tracklist__cell--title">
+                            <span class="track__title">23 Septiembre 2023</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--artist">
+                            <span class="track__artist">5.50</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--duration">
+                            <button class="btn btn--primary btn--large">
+                                <span>Descargar</span>
+                                <img src="./assets/icons/participacion.svg" alt="boton compartir">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="tracklist__row">
+                        <td class="tracklist__cell tracklist__cell--number">#MTS - 2022 - 5A6X</td>
+                        <td class="tracklist__cell tracklist__cell--title">
+                            <span class="track__title">10 Septiembre 2022</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--artist">
+                            <span class="track__artist">7.77</span>
+                        </td>
+                        <td class="tracklist__cell tracklist__cell--duration">
+                            <button class="btn btn--primary btn--large">
+                                <span>Descargar</span>
+                                <img src="./assets/icons/participacion.svg" alt="boton compartir">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <h3 class=>Mostrando 1 a 5 de 48 compras realizadas</h3>
+        <div class="album-actions">
+            <div class="album-actions__secondary">
+                <button class="btn btn--secondary">
+                    <span class="btn__text">Anterior</span>
+                </button>
+                <button class="btn btn--secondary">
+                    <span class="btn__text">Siguiente</span>
+                </button>
+            </div>
+        </div>
+</body>
+</html>
